@@ -1,0 +1,3212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mein Haus Churrascaria - 22 anos de tradição em São José, SC. Espeto corrido com mais de 20 cortes de carne, buffet completo, ambiente familiar. Reserve sua mesa.">
+    <meta name="theme-color" content="#0F0800">
+    <title>Mein Haus Churrascaria | 22 anos de tradição na brasa · São José/SC</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Palette */
+            --marrom-escuro: #0F0800;
+            --marrom-medio: #1A0E04;
+            --quase-preto: #0A0602;
+            --bege-claro: #FAF5EF;
+            --bege-medio: #F0E8DA;
+            --branco: #FFFFFF;
+            --dourado: #D4AF37;
+            --dourado-light: #FBF5B7;
+            --dourado-dark: #AA771C;
+            --dourado-soft: #C9A84C;
+            --gradient-ouro: linear-gradient(135deg, #AA771C 0%, #D4AF37 25%, #FBF5B7 50%, #D4AF37 75%, #AA771C 100%);
+            --gradient-ouro-soft: linear-gradient(135deg, #B8893A 0%, #D4AF37 50%, #B8893A 100%);
+            --cinza-quente: #8A9070;
+            --texto-suave: #5A5448;
+
+            /* Typography */
+            --font-playfair: 'Playfair Display', serif;
+            --font-cormorant: 'Cormorant Garamond', serif;
+            --font-jost: 'Jost', sans-serif;
+
+            /* Easing */
+            --ease-luxe: cubic-bezier(0.25, 1, 0.5, 1);
+            --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* GreatPages Breakout */
+        .mh-page-breakout {
+            width: 100vw !important;
+            max-width: 100vw !important;
+            position: relative !important;
+            left: 50% !important;
+            right: 50% !important;
+            margin-left: -50vw !important;
+            margin-right: -50vw !important;
+            overflow-x: hidden !important;
+            background: var(--branco);
+            display: block !important;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-jost);
+            color: var(--marrom-escuro);
+            background-color: var(--branco);
+            line-height: 1.6;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-playfair);
+            font-weight: 400;
+            line-height: 1.05;
+            letter-spacing: -0.5px;
+        }
+
+        ::selection {
+            background: var(--dourado);
+            color: var(--marrom-escuro);
+        }
+
+        .eyebrow {
+            font-family: var(--font-jost);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--dourado);
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .btn-dourado {
+            background: var(--gradient-ouro);
+            background-size: 200% auto;
+            color: var(--marrom-escuro);
+            font-family: var(--font-jost);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 18px 40px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.5s var(--ease-luxe);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(170, 119, 28, 0.3);
+            border-radius: 2px;
+        }
+
+        .btn-dourado::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.45),
+                    transparent);
+            transition: all 0.7s;
+        }
+
+        .btn-dourado:hover::before {
+            left: 100%;
+        }
+
+        .btn-dourado:hover {
+            background-position: right center;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px rgba(170, 119, 28, 0.4);
+        }
+
+        .btn-dourado:active {
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s var(--ease-luxe), transform 1s var(--ease-luxe);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes scroll-down {
+            0% { transform: translateY(0); opacity: 0; }
+            40% { opacity: 1; }
+            80% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(20px); opacity: 0; }
+        }
+
+        @keyframes whatsapp-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6), 0 6px 24px rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0), 0 6px 24px rgba(37, 211, 102, 0.4); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 6px 24px rgba(37, 211, 102, 0.4); }
+        }
+
+        /* WHATSAPP FLOATING */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 999;
+            transition: all 0.3s var(--ease-luxe);
+            animation: whatsapp-pulse 2.5s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+
+        /* SECTION 1 - HERO */
+        .hero-logo-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 22px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-logo-bar img {
+            height: 84px;
+            width: auto;
+            filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.5));
+            transition: transform 0.4s var(--ease-luxe);
+        }
+
+        .hero-logo-bar img:hover {
+            transform: scale(1.05);
+        }
+
+        .hero {
+            min-height: 100vh;
+            background-color: var(--marrom-escuro);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100%;
+            background-image: url('https://files.greatpages.com.br/arquivos/paginas_editor/24366-439b775e9ac9ccb9c067f1f3b790d00f.png');
+            background-size: cover;
+            background-position: right center;
+            animation: float 20s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to right, var(--marrom-escuro) 0%, rgba(15, 8, 0, 0.6) 60%, rgba(15, 8, 0, 0) 90%),
+                linear-gradient(to bottom, rgba(15, 8, 0, 0.4) 0%, transparent 30%, rgba(15, 8, 0, 0.3) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 58%;
+            padding-right: 40px;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .hero-eyebrow .line {
+            width: 48px;
+            height: 1px;
+            background-color: var(--dourado);
+        }
+
+        .hero-eyebrow .badge-22 {
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--dourado);
+            padding: 6px 14px;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 2px;
+        }
+
+        .hero h1 {
+            color: var(--branco);
+            font-size: 88px;
+            margin-bottom: 28px;
+            line-height: 0.98;
+            letter-spacing: -2px;
+            font-weight: 400;
+        }
+
+        .hero h1 span {
+            color: #C9A84C;
+            display: block;
+            font-weight: 700;
+            font-style: italic;
+            margin-top: 6px;
+        }
+
+        .hero-lead {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 19px;
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 540px;
+            margin-bottom: 40px;
+        }
+
+        /* EMBERS / BRASAS EFFECT */
+        .embers {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .ember {
+            position: absolute;
+            bottom: -20px;
+            background: radial-gradient(circle, #FFD700 0%, #FF4D00 40%, #FF0000 100%);
+            border-radius: 50%;
+            opacity: 0;
+            filter: blur(0.5px);
+            box-shadow: 0 0 10px #FF4D00, 0 0 20px #FF8000;
+            animation: rise 6s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0) translateX(0) scale(0.5); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 0.8; }
+            100% { transform: translateY(-110vh) translateX(100px) scale(0); opacity: 0; }
+        }
+
+        .ember:nth-child(1) { left: 10%; width: 6px; height: 6px; animation-delay: 0s; animation-duration: 5s; }
+        .ember:nth-child(2) { left: 35%; width: 4px; height: 4px; animation-delay: 1.5s; animation-duration: 7s; }
+        .ember:nth-child(3) { left: 55%; width: 8px; height: 8px; animation-delay: 3s; animation-duration: 6s; }
+        .ember:nth-child(4) { left: 75%; width: 5px; height: 5px; animation-delay: 4.5s; animation-duration: 8s; }
+        .ember:nth-child(5) { left: 95%; width: 7px; height: 7px; animation-delay: 2s; animation-duration: 5.5s; }
+        .ember:nth-child(6) { left: 25%; width: 4px; height: 4px; animation-delay: 5s; animation-duration: 9s; }
+        .ember:nth-child(7) { left: 45%; width: 6px; height: 6px; animation-delay: 1s; animation-duration: 6.5s; }
+        .ember:nth-child(8) { left: 65%; width: 5px; height: 5px; animation-delay: 3.5s; animation-duration: 7.5s; }
+        .ember:nth-child(9) { left: 15%; width: 5px; height: 5px; animation-delay: 0.8s; animation-duration: 5.2s; }
+        .ember:nth-child(10) { left: 40%; width: 7px; height: 7px; animation-delay: 2.2s; animation-duration: 6.8s; }
+        .ember:nth-child(11) { left: 60%; width: 4px; height: 4px; animation-delay: 3.8s; animation-duration: 5.5s; }
+        .ember:nth-child(12) { left: 85%; width: 6px; height: 6px; animation-delay: 5.2s; animation-duration: 8.2s; }
+        .ember:nth-child(13) { left: 5%; width: 4px; height: 4px; animation-delay: 1.2s; animation-duration: 6.3s; }
+        .ember:nth-child(14) { left: 50%; width: 8px; height: 8px; animation-delay: 2.8s; animation-duration: 7.1s; }
+        .ember:nth-child(15) { left: 80%; width: 5px; height: 5px; animation-delay: 4.1s; animation-duration: 5.9s; }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-ghost {
+            color: var(--branco);
+            font-family: var(--font-jost);
+            font-size: 15px;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 6px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-ghost:hover {
+            border-bottom-color: var(--dourado);
+            color: var(--dourado);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            transition: transform 0.3s;
+        }
+
+        .btn-ghost:hover svg {
+            transform: translateX(3px);
+        }
+
+        .hero-reviews {
+            color: var(--branco);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+
+        .hero-reviews:hover {
+            opacity: 1;
+        }
+
+        .hero-reviews .stars {
+            display: flex;
+            gap: 2px;
+            margin-right: 4px;
+        }
+
+        .hero-reviews svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--dourado);
+        }
+
+        .hero-reviews strong {
+            color: var(--dourado);
+            font-weight: 600;
+            margin: 0 4px;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            pointer-events: none;
+        }
+
+        .scroll-indicator-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, var(--dourado));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-indicator-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: var(--dourado);
+            animation: scroll-down 2s ease-in-out infinite;
+        }
+
+        .hero-bottom-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-top: 0.5px solid rgba(201, 168, 76, 0.15);
+            background: rgba(15, 8, 0, 0.55);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            z-index: 10;
+        }
+
+        .hero-bottom-bar .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .hero-stat {
+            padding: 28px 24px;
+            border-right: 0.5px solid rgba(201, 168, 76, 0.18);
+            transition: background 0.4s ease;
+            position: relative;
+        }
+
+        .hero-stat:hover {
+            background: rgba(212, 175, 55, 0.04);
+        }
+
+        .hero-stat:last-child {
+            border-right: none;
+        }
+
+        .stat-label {
+            color: var(--dourado);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .stat-label svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--dourado);
+        }
+
+        .stat-value {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* SECTION 2 - AUTORIDADE */
+        .s-autoridade {
+            padding: 120px 0;
+            background-color: var(--branco);
+            position: relative;
+        }
+
+        .s-autoridade::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+        }
+
+        .autoridade-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+
+        .autoridade-title {
+            position: relative;
+        }
+
+        .autoridade-title::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-ouro);
+        }
+
+        .autoridade-title h2 {
+            font-size: 52px;
+            color: var(--marrom-escuro);
+            line-height: 1.05;
+        }
+
+        .autoridade-title h2 span {
+            color: var(--dourado);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .autoridade-text {
+            color: var(--texto-suave);
+            font-weight: 300;
+            text-align: right;
+            font-size: 18px;
+            display: flex;
+            align-items: flex-end;
+            line-height: 1.85;
+        }
+
+        .historia-bloco {
+            background-color: var(--bege-claro);
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+            transition: transform 0.6s var(--ease-luxe), box-shadow 0.6s;
+        }
+
+        .historia-bloco:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .historia-img {
+            background-color: #2A1608;
+            position: relative;
+            min-height: 480px;
+            background-image: url('https://github.com/jefdesignerf5/meinhaus/blob/main/foto%2002%20nossa%20historia.png?raw=true');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .historia-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 50%, rgba(15, 8, 0, 0.3) 100%);
+            pointer-events: none;
+        }
+
+        .badge-desde {
+            position: absolute;
+            bottom: 32px;
+            left: 32px;
+            background: var(--gradient-ouro);
+            color: var(--marrom-escuro);
+            padding: 12px 22px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            z-index: 2;
+            border-radius: 2px;
+        }
+
+        .historia-content {
+            padding: 80px 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .historia-content h3 {
+            font-size: 34px;
+            margin: 18px 0 26px;
+            line-height: 1.1;
+        }
+
+        .historia-content h3 em {
+            color: var(--dourado);
+            font-style: italic;
+            font-family: var(--font-cormorant);
+            font-weight: 500;
+        }
+
+        .historia-content p {
+            font-weight: 300;
+            margin-bottom: 36px;
+            color: #4A4A4A;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .assinatura {
+            font-family: var(--font-cormorant);
+            font-style: italic;
+            color: var(--dourado);
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .assinatura::before {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: var(--dourado);
+        }
+
+        /* SECTION DIFERENCIAIS */
+        .s-diferenciais {
+            background-color: var(--bege-claro);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .diferenciais-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .diferenciais-header h2 {
+            font-size: 42px;
+            margin-top: 18px;
+            color: var(--marrom-escuro);
+        }
+
+        .diferenciais-header h2 em {
+            color: var(--dourado);
+            font-style: italic;
+            font-family: var(--font-cormorant);
+            font-weight: 500;
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .dif-card {
+            background: var(--branco);
+            padding: 48px 32px;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.5s var(--ease-luxe);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dif-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-ouro);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s var(--ease-luxe);
+        }
+
+        .dif-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .dif-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .dif-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            color: var(--dourado);
+            transition: all 0.4s var(--ease-luxe);
+        }
+
+        .dif-card:hover .dif-icon {
+            background: var(--gradient-ouro);
+            color: var(--marrom-escuro);
+            transform: rotate(8deg) scale(1.05);
+        }
+
+        .dif-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        .dif-card h4 {
+            font-family: var(--font-playfair);
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--marrom-escuro);
+            font-weight: 500;
+        }
+
+        .dif-card p {
+            color: var(--texto-suave);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* SECTION 3 - VÍDEO */
+        .s-video {
+            background-color: var(--marrom-escuro);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .s-video::before,
+        .s-video::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .s-video::before {
+            top: -200px;
+            left: -200px;
+        }
+
+        .s-video::after {
+            bottom: -200px;
+            right: -200px;
+        }
+
+        .video-header {
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .s-video .eyebrow {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .s-video h2 {
+            color: var(--branco);
+            font-size: 48px;
+            margin-bottom: 18px;
+        }
+
+        .s-video h2 em {
+            color: var(--dourado);
+            font-style: italic;
+            font-family: var(--font-cormorant);
+            font-weight: 500;
+        }
+
+        .s-video .subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 300;
+            font-size: 19px;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .video-player {
+            max-width: 420px;
+            margin: 0 auto 90px;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            border-radius: 10px;
+            position: relative;
+            aspect-ratio: 9/16;
+            background-color: #000;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 60px rgba(212, 175, 55, 0.08);
+            transition: transform 0.5s var(--ease-luxe), box-shadow 0.5s;
+            z-index: 2;
+        }
+
+        .video-player:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6), 0 0 80px rgba(212, 175, 55, 0.18);
+        }
+
+        .video-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .reviews {
+            border-top: 1px solid rgba(201, 168, 76, 0.18);
+            padding-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+        }
+
+        .review {
+            transition: transform 0.5s var(--ease-luxe);
+            padding: 8px;
+        }
+
+        .review:hover {
+            transform: translateY(-6px);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 18px;
+        }
+
+        .review-stars svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--dourado);
+        }
+
+        .review-text {
+            font-family: var(--font-cormorant);
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 19px;
+            margin-bottom: 24px;
+            line-height: 1.65;
+            position: relative;
+        }
+
+        .review-author-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .review-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gradient-ouro-soft);
+            color: var(--marrom-escuro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-jost);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+
+        .review-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-author {
+            color: var(--branco);
+            font-size: 13px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .review-source {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 12px;
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .review-source svg {
+            width: 10px;
+            height: 10px;
+            fill: currentColor;
+        }
+
+        /* SECTION 4 - CARDÁPIO */
+        .s-cardapio {
+            background-color: var(--bege-claro);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .cardapio-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .cardapio-eyebrow-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 22px;
+        }
+
+        .cardapio-eyebrow-wrapper .line {
+            width: 50px;
+            height: 1px;
+            background: var(--dourado);
+        }
+
+        .s-cardapio h2 {
+            font-size: 48px;
+            margin-bottom: 18px;
+        }
+
+        .s-cardapio h2 em {
+            color: var(--dourado);
+            font-style: italic;
+            font-family: var(--font-cormorant);
+            font-weight: 500;
+        }
+
+        .ornament {
+            color: var(--dourado);
+            font-size: 22px;
+            letter-spacing: 6px;
+            line-height: 1;
+            margin-bottom: 22px;
+        }
+
+        .s-cardapio .subtitle {
+            color: var(--texto-suave);
+            font-weight: 300;
+            font-size: 19px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-bottom: 80px;
+        }
+
+        /* CARROSSEL DE PRODUTOS */
+        .carousel-section {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .carousel-container {
+            position: relative;
+        }
+
+        .carousel-viewport {
+            overflow: hidden;
+            margin: 0 8px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.6s var(--ease-luxe);
+            will-change: transform;
+        }
+
+        .carousel-card {
+            flex: 0 0 calc((100% - 48px) / 3);
+            background: var(--branco);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.08);
+            transition: transform 0.5s var(--ease-luxe), box-shadow 0.5s;
+        }
+
+        .carousel-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .carousel-img {
+            height: 180px;
+            background-color: #2A1608;
+            color: rgba(255, 255, 255, 0.2);
+            font-style: italic;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 22px;
+            line-height: 1.45;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-img::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.06) 0%, transparent 60%);
+        }
+
+        .carousel-content {
+            padding: 28px 26px 30px;
+        }
+
+        .carousel-content h4 {
+            font-family: var(--font-playfair);
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--marrom-escuro);
+            margin-bottom: 10px;
+            line-height: 1.2;
+            letter-spacing: -0.3px;
+        }
+
+        .carousel-content p {
+            font-family: var(--font-jost);
+            font-weight: 300;
+            font-size: 14px;
+            color: var(--texto-suave);
+            line-height: 1.6;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--branco);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            color: var(--dourado);
+            font-size: 20px;
+            font-weight: 400;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s var(--ease-luxe);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            font-family: var(--font-jost);
+        }
+
+        .carousel-arrow:hover {
+            background: var(--gradient-ouro);
+            color: var(--marrom-escuro);
+            transform: translateY(-50%) scale(1.06);
+            box-shadow: 0 10px 24px rgba(170, 119, 28, 0.25);
+        }
+
+        .carousel-arrow:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .carousel-prev { left: -24px; }
+        .carousel-next { right: -24px; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 36px;
+        }
+
+        .carousel-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.25);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.4s var(--ease-luxe);
+        }
+
+        .carousel-dot:hover {
+            background: rgba(212, 175, 55, 0.5);
+        }
+
+        .carousel-dot.active {
+            background: var(--dourado);
+            width: 28px;
+            border-radius: 6px;
+        }
+
+        .carousel-nota {
+            text-align: center;
+            color: #8C8678;
+            font-style: italic;
+            font-size: 13px;
+            margin-top: 28px;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+
+        .card-menu {
+            background: var(--branco);
+            padding: 50px 40px;
+            border-radius: 6px;
+            position: relative;
+            transition: all 0.5s var(--ease-luxe);
+            border: 1px solid rgba(212, 175, 55, 0.08);
+            overflow: hidden;
+        }
+
+        .card-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-ouro);
+        }
+
+        .card-menu:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--dourado);
+            transition: all 0.5s var(--ease-luxe);
+        }
+
+        .card-menu:hover .card-icon {
+            background: var(--gradient-ouro);
+            color: var(--marrom-escuro);
+            transform: scale(1.08);
+        }
+
+        .card-icon svg {
+            width: 26px;
+            height: 26px;
+            fill: currentColor;
+        }
+
+        .card-menu h3 {
+            color: var(--marrom-escuro);
+            font-family: var(--font-playfair);
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+
+        .card-menu .card-tag {
+            color: var(--dourado);
+            font-family: var(--font-jost);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 26px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .menu-list {
+            list-style: none;
+        }
+
+        .menu-list li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 18px;
+            font-size: 16px;
+            color: var(--marrom-escuro);
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .menu-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--gradient-ouro);
+        }
+
+        .menu-detail {
+            display: block;
+            font-size: 13px;
+            color: #888;
+            margin-top: 4px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .precos-bloco {
+            background: linear-gradient(135deg, var(--marrom-escuro) 0%, #1A0E04 100%);
+            border-radius: 10px;
+            padding: 70px 60px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .precos-bloco::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .precos-bloco h3 {
+            color: var(--dourado);
+            font-size: 28px;
+            margin-bottom: 12px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .precos-subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 15px;
+            margin-bottom: 50px;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .precos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 30px;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .preco-col {
+            padding: 50px 30px 40px;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s var(--ease-luxe);
+            position: relative;
+        }
+
+        .preco-col:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .preco-col:last-child {
+            border-right: none;
+        }
+
+        .preco-col.highlight {
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.02) 100%);
+            border-top: 2px solid var(--dourado);
+            border-bottom: 2px solid var(--dourado);
+        }
+
+        .preco-col.highlight:hover {
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.04) 100%);
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-ouro);
+            color: var(--marrom-escuro);
+            font-size: 9px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 0 0 4px 4px;
+            text-transform: uppercase;
+        }
+
+        .dia {
+            color: var(--branco);
+            font-size: 16px;
+            margin-bottom: 22px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .valor {
+            color: var(--branco);
+            font-size: 38px;
+            font-family: var(--font-playfair);
+            margin-bottom: 12px;
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+        .valor-riscado {
+            font-size: 18px;
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 0.3);
+            margin-right: 10px;
+            font-family: var(--font-jost);
+            font-weight: 400;
+        }
+
+        .valor-crianca {
+            color: var(--dourado);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            margin-top: 6px;
+        }
+
+        .precos-nota {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 13px;
+            margin-bottom: 36px;
+            font-style: italic;
+            position: relative;
+        }
+
+        /* SECTION 5 - GALERIA + HORÁRIOS */
+        .s-galeria {
+            background-color: var(--branco);
+            padding-top: 120px;
+        }
+
+        .galeria-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .galeria-header h2 {
+            font-size: 48px;
+            margin-top: 22px;
+        }
+
+        .galeria-header h2 em {
+            color: var(--dourado);
+            font-style: italic;
+            font-family: var(--font-cormorant);
+            font-weight: 500;
+        }
+
+        .galeria-header .subtitle {
+            color: var(--texto-suave);
+            margin-top: 14px;
+            font-size: 17px;
+            font-weight: 300;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 320px 320px;
+            gap: 10px;
+        }
+
+        .g-item {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #222;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+        }
+
+        .g-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s var(--ease-luxe);
+        }
+
+        .g-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .g-item-large {
+            grid-row: span 2;
+        }
+
+        .g-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 50px 30px 30px;
+            background: linear-gradient(to top, rgba(15, 8, 0, 0.95) 0%, rgba(15, 8, 0, 0.4) 60%, transparent 100%);
+            transform: translateY(0);
+            transition: padding 0.4s ease;
+        }
+
+        .g-item:hover .g-overlay {
+            padding-bottom: 38px;
+        }
+
+        .g-label {
+            color: var(--branco);
+            font-size: 13px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .g-sublabel {
+            color: rgba(212, 175, 55, 0.85);
+            font-family: var(--font-cormorant);
+            font-style: italic;
+            font-size: 18px;
+            margin-top: 8px;
+        }
+
+        .faixa-horarios {
+            background-color: var(--bege-claro);
+            margin-top: 80px;
+        }
+
+        .horarios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .horario-col {
+            padding: 70px 50px;
+            border-right: 0.5px solid #E0D8C8;
+            position: relative;
+        }
+
+        .horario-col:last-child {
+            border-right: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.04) 0%, transparent 100%);
+        }
+
+        .horario-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            color: var(--dourado);
+        }
+
+        .horario-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .horario-label {
+            color: var(--dourado);
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            margin-bottom: 26px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .horario-linha {
+            display: flex;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+            font-size: 15px;
+        }
+
+        .horario-linha:last-child {
+            border-bottom: none;
+        }
+
+        .horario-linha span:first-child {
+            font-weight: 500;
+            color: var(--marrom-escuro);
+        }
+
+        .horario-linha span:last-child {
+            color: var(--texto-suave);
+        }
+
+        .horario-cta-text {
+            font-family: var(--font-playfair);
+            font-size: 22px;
+            margin-bottom: 22px;
+            line-height: 1.3;
+        }
+
+        .horario-cta-text em {
+            color: var(--dourado);
+            font-style: italic;
+            font-family: var(--font-cormorant);
+        }
+
+        .horario-nota {
+            font-size: 13px;
+            color: #888;
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .horario-nota svg {
+            width: 14px;
+            height: 14px;
+            fill: #25D366;
+        }
+
+        /* SECTION 6 - LOCALIZAÇÃO */
+        .s-localizacao {
+            background-color: var(--bege-claro);
+            padding: 120px 0;
+        }
+
+        .local-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .local-header h2 {
+            font-size: 46px;
+            margin-top: 18px;
+        }
+
+        .local-header h2 em {
+            color: var(--dourado);
+            font-style: italic;
+            font-family: var(--font-cormorant);
+            font-weight: 500;
+        }
+
+        .local-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 60px;
+            align-items: stretch;
+        }
+
+        .local-mapa {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 480px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #E0D4C4;
+            margin-bottom: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .link-dourado {
+            color: var(--dourado);
+            font-size: 15px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s var(--ease-luxe);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            align-self: flex-start;
+        }
+
+        .link-dourado:hover {
+            transform: translateX(6px);
+            color: var(--dourado-dark);
+        }
+
+        .link-dourado svg {
+            transition: transform 0.3s;
+        }
+
+        .link-dourado:hover svg {
+            transform: translateX(3px);
+        }
+
+        .local-info {
+            display: flex;
+            flex-direction: column;
+            background: var(--branco);
+            padding: 40px 44px;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .info-block {
+            padding: 24px 0;
+            border-bottom: 0.5px solid #E8DFCE;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .info-block:first-child { padding-top: 8px; }
+        .info-block:last-child {
+            border-bottom: none;
+            padding-bottom: 8px;
+        }
+
+        .info-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dourado);
+            flex-shrink: 0;
+        }
+
+        .info-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-label {
+            color: var(--dourado);
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .info-valor {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 4px;
+            line-height: 1.4;
+            color: var(--marrom-escuro);
+        }
+
+        .info-detalhe {
+            font-size: 14px;
+            font-weight: 300;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .info-detalhe a {
+            color: var(--dourado);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info-detalhe a:hover {
+            color: var(--dourado-dark);
+            text-decoration: underline;
+        }
+
+        .estrutura-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+            padding-top: 28px;
+            border-top: 0.5px solid #E8DFCE;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.22);
+            color: var(--marrom-escuro);
+            font-size: 12px;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s var(--ease-luxe);
+        }
+
+        .chip:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .chip svg {
+            width: 13px;
+            height: 13px;
+            fill: var(--dourado);
+            flex-shrink: 0;
+        }
+
+        /* SECTION 7 - CTA + POP-UP + FOOTER */
+        .s-cta {
+            background: linear-gradient(135deg, var(--marrom-escuro) 0%, #150A02 100%);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .s-cta::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-text h2 {
+            color: var(--branco);
+            font-size: 58px;
+            margin: 22px 0 18px;
+            line-height: 1;
+        }
+
+        .cta-text h2 em {
+            color: var(--dourado);
+            font-style: italic;
+            font-family: var(--font-cormorant);
+            font-weight: 500;
+        }
+
+        .cta-text p {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 20px;
+            margin-bottom: 36px;
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 480px;
+        }
+
+        @keyframes pulse-dot {
+            0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.7); }
+            70% { box-shadow: 0 0 0 8px rgba(201, 168, 76, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+        }
+
+        .badge-urgencia {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: 0.5px solid rgba(201, 168, 76, 0.3);
+            background: rgba(212, 175, 55, 0.05);
+            padding: 11px 22px;
+            border-radius: 40px;
+            margin-bottom: 38px;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--dourado);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        .badge-urgencia span {
+            color: var(--branco);
+            font-size: 12px;
+            letter-spacing: 1.8px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .cta-features {
+            display: flex;
+            gap: 28px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cta-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .cta-feature svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--dourado);
+        }
+
+        .cta-nota {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 14px;
+            margin-top: 16px;
+            display: block;
+        }
+
+        .popup-preview {
+            border: 0.5px solid rgba(201, 168, 76, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: var(--branco);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1);
+        }
+
+        .popup-header {
+            background: linear-gradient(135deg, var(--marrom-medio) 0%, #221408 100%);
+            padding: 44px 44px 38px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .popup-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-ouro);
+        }
+
+        .popup-pretag {
+            color: var(--dourado);
+            font-size: 11px;
+            letter-spacing: 2.8px;
+            margin-bottom: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .popup-header h3 {
+            color: var(--branco);
+            font-size: 36px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .popup-header h3 em {
+            color: var(--dourado);
+            font-style: italic;
+            font-family: var(--font-cormorant);
+        }
+
+        .popup-header p {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .popup-body {
+            padding: 38px 44px 40px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 10px;
+            color: var(--texto-suave);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .form-input {
+            width: 100%;
+            border: 1px solid #E0D8C8;
+            padding: 16px 20px;
+            font-family: var(--font-jost);
+            font-size: 15px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            color: var(--marrom-escuro);
+            background: #FCFAF6;
+        }
+
+        .form-input::placeholder {
+            color: #B5AC9C;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--dourado);
+            background: var(--branco);
+            box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.12);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .form-privacidade {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #999;
+            font-size: 13px;
+            margin-top: 22px;
+        }
+
+        .form-privacidade svg {
+            fill: currentColor;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: var(--quase-preto);
+            padding: 70px 0 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.08);
+            position: relative;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand-block .footer-logo {
+            font-family: var(--font-playfair);
+            color: var(--branco);
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .footer-brand-block .footer-logo em {
+            color: var(--dourado);
+            font-style: italic;
+            font-family: var(--font-cormorant);
+        }
+
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 14px;
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 0;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            text-decoration: none;
+            opacity: 0.6;
+            transition: opacity 0.3s var(--ease-luxe), transform 0.3s var(--ease-luxe);
+        }
+
+        .footer-social a:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .footer-col h5 {
+            color: var(--dourado);
+            font-family: var(--font-jost);
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul a,
+        .footer-col ul span {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 14px;
+            text-decoration: none;
+            font-weight: 300;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--dourado);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-copy {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        .footer-credit {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 992px) {
+            .hero-content {
+                width: 100%;
+                padding: 0;
+                text-align: center;
+            }
+
+            .hero-bg {
+                width: 100%;
+                opacity: 0.45;
+            }
+
+            .hero-bg::after {
+                background: rgba(15, 8, 0, 0.6);
+            }
+
+            .hero h1 {
+                font-size: 44px;
+                line-height: 1.05;
+                margin-bottom: 20px;
+            }
+
+            .hero h1 span {
+                display: inline;
+            }
+
+            .hero-eyebrow {
+                justify-content: center;
+            }
+
+            .hero-eyebrow .line {
+                display: none;
+            }
+
+            .hero-lead {
+                font-size: 16px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .hero-reviews {
+                justify-content: center;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .hero-bottom-bar .container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-stat {
+                padding: 14px 12px;
+            }
+
+            .stat-label {
+                font-size: 9px;
+                letter-spacing: 1.5px;
+                margin-bottom: 4px;
+            }
+
+            .stat-value {
+                font-size: 13px;
+            }
+
+            .stat-label svg {
+                width: 11px;
+                height: 11px;
+            }
+
+            .hero-logo-bar img {
+                height: 60px;
+            }
+
+            .autoridade-top,
+            .historia-bloco,
+            .cta-grid,
+            .local-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .autoridade-title h2,
+            .s-cardapio h2,
+            .s-video h2,
+            .galeria-header h2,
+            .local-header h2 {
+                font-size: 34px;
+            }
+
+            .cta-text h2 {
+                font-size: 38px;
+            }
+
+            .historia-content {
+                padding: 50px 30px;
+            }
+
+            .autoridade-text {
+                text-align: left;
+            }
+
+            .diferenciais-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 18px;
+            }
+
+            .dif-card {
+                padding: 32px 22px;
+            }
+
+            .cards-grid,
+            .precos-grid,
+            .reviews,
+            .horarios-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .carousel-card {
+                flex: 0 0 100%;
+            }
+
+            .carousel-prev { left: 4px; }
+            .carousel-next { right: 4px; }
+
+            .carousel-arrow {
+                width: 42px;
+                height: 42px;
+                font-size: 18px;
+                background: rgba(255, 255, 255, 0.95);
+            }
+
+            .carousel-viewport {
+                margin: 0;
+            }
+
+            .precos-bloco {
+                padding: 40px 24px;
+            }
+
+            .preco-col {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                padding: 30px 20px;
+            }
+
+            .preco-col.highlight {
+                border-top: 2px solid var(--dourado);
+                border-bottom: 2px solid var(--dourado);
+            }
+
+            .horario-col {
+                border-right: none;
+                border-bottom: 0.5px solid #E0D8C8;
+                padding: 40px 24px;
+            }
+
+            .galeria-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 8px;
+            }
+
+            .g-item-large {
+                grid-row: auto;
+                height: 360px;
+            }
+
+            .g-item {
+                height: 280px;
+            }
+
+            .map-container {
+                height: 320px;
+            }
+
+            .local-info {
+                padding: 30px 26px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                padding-bottom: 40px;
+            }
+
+            .footer-brand-block {
+                grid-column: 1 / -1;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .whatsapp-float {
+                width: 54px;
+                height: 54px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .popup-header,
+            .popup-body {
+                padding-left: 28px;
+                padding-right: 28px;
+            }
+
+            .popup-header h3 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mh-page-breakout">
+
+        <!-- WHATSAPP FLOATING BUTTON -->
+        <a href="https://wa.me/5548999558799?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Mein%20Haus." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+        </a>
+
+        <!-- SECTION 1 - HERO -->
+        <section class="hero">
+            <div class="hero-logo-bar">
+                <img src="https://churrascariameinhaus.com.br/wp-content/webp-express/webp-images/uploads/2023/04/churracaria-mein-haus-logo.png.webp"
+                    alt="Mein Haus Churrascaria">
+            </div>
+            <div class="hero-bg"></div>
+
+            <!-- Brasas -->
+            <div class="embers">
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+                <div class="ember"></div>
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2; width: 100%;">
+                <div class="hero-content reveal">
+                    <div class="hero-eyebrow">
+                        <span class="badge-22">DESDE 2002</span>
+                        <span class="eyebrow">SÃO JOSÉ · SC</span>
+                        <div class="line"></div>
+                    </div>
+                    <h1>A melhor carne da <span>Grande Florianópolis.</span></h1>
+
+                    <p class="hero-lead">22 anos dominando a arte do churrasco gaúcho. Cortes nobres, espeto corrido completo e o sabor inconfundível da brasa em cada fatia.</p>
+
+                    <div class="hero-actions">
+                        <a href="#reserva" class="btn-dourado">GARANTIR MINHA RESERVA</a>
+                        <a href="#cardapio" class="btn-ghost">
+                            Ver cardápio
+                            <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="hero-reviews">
+                        <span class="stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+                        </span>
+                        <strong>4.9</strong> · 750+ avaliações no Google
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <div class="scroll-indicator-line"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 - AUTORIDADE -->
+        <section class="s-autoridade">
+            <div class="container">
+                <div class="autoridade-top reveal">
+                    <div class="autoridade-title">
+                        <span class="eyebrow" style="margin-bottom: 14px; display: block;">NOSSA HISTÓRIA</span>
+                        <h2>Referência em churrasco há <span>22 anos.</span></h2>
+                    </div>
+                    <div class="autoridade-text">
+                        <p>Nossa história começou em São José no ano de 2002, com o propósito de oferecer o mais
+                            autêntico e suculento churrasco da região, unindo qualidade excepcional, ambiente acolhedor e o atendimento que só uma casa de tradição pode entregar.</p>
+                    </div>
+                </div>
+
+                <div class="historia-bloco reveal delay-1">
+                    <div class="historia-img">
+                        <div class="badge-desde">DESDE 2002</div>
+                    </div>
+                    <div class="historia-content">
+                        <span class="eyebrow">FAMÍLIA MEIN HAUS</span>
+                        <h3>Tradição de <em>família.</em></h3>
+                        <p>Mais de duas décadas aprimorando a arte de assar carnes nobres no ponto certo. Um ambiente criado para celebrar os
+                            bons momentos da vida ao redor de uma mesa farta, cortes selecionados e o aroma inconfundível da brasa.</p>
+                        <span class="assinatura">Família Mein Haus</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION DIFERENCIAIS -->
+        <section class="s-diferenciais">
+            <div class="container">
+                <div class="diferenciais-header reveal">
+                    <span class="eyebrow">POR QUE A MEIN HAUS</span>
+                    <h2>O melhor da brasa, <em>servido a você.</em></h2>
+                </div>
+
+                <div class="diferenciais-grid">
+                    <div class="dif-card reveal delay-1">
+                        <div class="dif-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                        </div>
+                        <h4>Cortes Premium</h4>
+                        <p>Picanha maturada, costela 12h, fraldinha e mais de 20 cortes nobres no espeto.</p>
+                    </div>
+                    <div class="dif-card reveal delay-2">
+                        <div class="dif-icon">
+                            <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+                        </div>
+                        <h4>Buffet Completo</h4>
+                        <p>Mais de 40 itens entre saladas, antepastos, guarnições quentes e sobremesas artesanais.</p>
+                    </div>
+                    <div class="dif-card reveal delay-3">
+                        <div class="dif-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.41 14.09l-3.59-3.59 1.41-1.41 2.18 2.18 5.18-5.18 1.41 1.42-6.59 6.58z"/></svg>
+                        </div>
+                        <h4>Tudo Incluso</h4>
+                        <p>Um único valor por pessoa: rodízio completo, buffet e sobremesas. Sem surpresas na conta.</p>
+                    </div>
+                    <div class="dif-card reveal delay-4">
+                        <div class="dif-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 7h-3V5.5C16 4.12 14.88 3 13.5 3h-3C9.12 3 8 4.12 8 5.5V7H5c-1.1 0-2 .9-2 2v9c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V9c0-1.1-.9-2-2-2zm-9-1.5c0-.28.22-.5.5-.5h3c.28 0 .5.22.5.5V7h-4V5.5zm9 13c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1V14h2v1c0 .55.45 1 1 1s1-.45 1-1v-1h6v1c0 .55.45 1 1 1s1-.45 1-1v-1h2v4.5z"/></svg>
+                        </div>
+                        <h4>Ambiente Familiar</h4>
+                        <p>280 lugares, estacionamento próprio gratuito e espaço pensado para receber a família toda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 - VÍDEO -->
+        <section class="s-video">
+            <div class="container">
+                <div class="video-header reveal">
+                    <span class="eyebrow">CONHEÇA A MEIN HAUS</span>
+                    <h2>Sinta a experiência <em>Mein Haus.</em></h2>
+                    <p class="subtitle">Um pouco do nosso ambiente, dos cortes na brasa e da paixão que coloca em cada detalhe.</p>
+                </div>
+
+                <div class="video-player reveal delay-1">
+                    <iframe src="https://player.vimeo.com/video/1187824636?autoplay=1&loop=1&muted=1" frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="reviews">
+                    <div class="review reveal delay-1">
+                        <div class="review-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <p class="review-text">"O melhor espeto corrido da região. Carnes no ponto perfeito e buffet completíssimo. Ambiente muito familiar."</p>
+                        <div class="review-author-row">
+                            <div class="review-avatar">CE</div>
+                            <div class="review-author-info">
+                                <span class="review-author">Carlos Eduardo</span>
+                                <div class="review-source">
+                                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                    Google · São José
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review reveal delay-2">
+                        <div class="review-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <p class="review-text">"Tradição que não decepciona. A picanha derrete na boca e o atendimento é sempre de primeira qualidade."</p>
+                        <div class="review-author-row">
+                            <div class="review-avatar">MS</div>
+                            <div class="review-author-info">
+                                <span class="review-author">Mariana Silva</span>
+                                <div class="review-source">
+                                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                    Google · Florianópolis
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review reveal delay-3">
+                        <div class="review-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <p class="review-text">"Local perfeito para almoço de domingo em família. Estacionamento fácil e comida espetacular."</p>
+                        <div class="review-author-row">
+                            <div class="review-avatar">RA</div>
+                            <div class="review-author-info">
+                                <span class="review-author">Roberto Alves</span>
+                                <div class="review-source">
+                                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                    Google · Palhoça
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 - CARDÁPIO -->
+        <section class="s-cardapio" id="cardapio">
+            <div class="container">
+                <div class="cardapio-header reveal">
+                    <div class="cardapio-eyebrow-wrapper">
+                        <div class="line"></div>
+                        <span class="eyebrow">ESPETO CORRIDO MEIN HAUS</span>
+                        <div class="line"></div>
+                    </div>
+                    <h2>Espeto corrido completo. <em>Buffet à vontade.</em></h2>
+                    <div class="ornament">· · ·</div>
+                    <p class="subtitle">Cortes nobres na brasa, buffet completo e acompanhamentos premium. Sobremesas disponíveis à parte.</p>
+                </div>
+
+                <div class="carousel-section reveal delay-1">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow carousel-prev" aria-label="Anterior" type="button">&#8592;</button>
+                        <div class="carousel-viewport">
+                            <div class="carousel-track">
+                                <div class="carousel-card">
+                                    <div class="carousel-img">[foto: picanha fatiada na brasa]</div>
+                                    <div class="carousel-content">
+                                        <h4>Picanha maturada</h4>
+                                        <p>Corte premium, ponto perfeito na brasa</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="carousel-img">[foto: costela no bafo]</div>
+                                    <div class="carousel-content">
+                                        <h4>Costela rústica 12h</h4>
+                                        <p>Cozimento lento no bafo, desfiando no garfo</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="carousel-img">[foto: fraldinha na grelha]</div>
+                                    <div class="carousel-content">
+                                        <h4>Fraldinha</h4>
+                                        <p>Macia, suculenta, com aquela crosta perfeita</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="carousel-img">[foto: maminha fatiada]</div>
+                                    <div class="carousel-content">
+                                        <h4>Maminha</h4>
+                                        <p>Corte nobre, sabor marcante</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="carousel-img">[foto: linguiça na brasa]</div>
+                                    <div class="carousel-content">
+                                        <h4>Linguiça artesanal</h4>
+                                        <p>Feita com tempero da casa</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="carousel-img">[foto: frango na churrasqueira]</div>
+                                    <div class="carousel-content">
+                                        <h4>Frango na brasa</h4>
+                                        <p>Suculento por dentro, crocante por fora</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="carousel-img">[foto: mesa de saladas]</div>
+                                    <div class="carousel-content">
+                                        <h4>Saladas variadas</h4>
+                                        <p>Mais de 15 opções frescas no buffet</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="carousel-img">[foto: pão de queijo]</div>
+                                    <div class="carousel-content">
+                                        <h4>Pão de queijo artesanal</h4>
+                                        <p>Quentinho, direto do forno</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-arrow carousel-next" aria-label="Próximo" type="button">&#8594;</button>
+                    </div>
+                    <div class="carousel-dots" role="tablist"></div>
+                    <div class="carousel-nota">* Sobremesas disponíveis à parte. Consulte nosso cardápio completo.</div>
+                </div>
+
+                <div class="precos-bloco reveal delay-1">
+                    <h3>Valores por pessoa</h3>
+                    <div class="precos-subtitle">Almoço e jantar · Tudo incluso, sem surpresas</div>
+                    <div class="precos-grid">
+                        <div class="preco-col">
+                            <div class="dia">Segunda e Terça</div>
+                            <div class="valor"><span class="valor-riscado">R$139,90</span> R$79,90</div>
+                            <div class="valor-crianca">Crianças R$39,95</div>
+                        </div>
+                        <div class="preco-col highlight">
+                            <div class="badge-popular">★ MAIS PEDIDO</div>
+                            <div class="dia">Quarta a Sexta</div>
+                            <div class="valor">R$99,90</div>
+                            <div class="valor-crianca">Crianças R$49,95</div>
+                        </div>
+                        <div class="preco-col">
+                            <div class="dia">Sábado e Domingo</div>
+                            <div class="valor">R$139,90 <span style="font-size: 14px; font-family: var(--font-jost); font-weight: 400; color: rgba(255,255,255,0.5);">almoço</span></div>
+                            <div class="valor" style="font-size: 26px; margin-top: 6px;">R$99,90 <span style="font-size: 13px; font-family: var(--font-jost); font-weight: 400; color: rgba(255,255,255,0.5);">jantar sáb</span></div>
+                            <div class="valor-crianca">Crianças R$69,50</div>
+                        </div>
+                    </div>
+                    <div class="precos-nota">* Valores promocionais sujeitos a alteração em feriados e datas especiais.</div>
+                    <a href="#reserva" class="btn-dourado">RESERVAR MINHA MESA</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 - GALERIA + HORÁRIOS -->
+        <section class="s-galeria">
+            <div class="galeria-header reveal">
+                <span class="eyebrow">AMBIENTE & PRODUTO</span>
+                <h2>Conheça a <em>Mein Haus.</em></h2>
+                <p class="subtitle">Um passeio visual pela nossa casa, pelos cortes e pelo ambiente que recebe você.</p>
+            </div>
+
+            <div class="container" style="padding: 0 14px;">
+                <div class="galeria-grid">
+                    <div class="g-item g-item-large reveal delay-1">
+                        <img src="https://github.com/jefdesignerf5/meinhaus/blob/main/espeto%20corrido.png?raw=true"
+                            alt="Espeto Corrido">
+                        <div class="g-overlay">
+                            <div class="g-label">ESPETO CORRIDO</div>
+                            <div class="g-sublabel">A autêntica tradição gaúcha</div>
+                        </div>
+                    </div>
+                    <div class="g-item reveal delay-2">
+                        <img src="https://files.greatpages.com.br/arquivos/paginas_editor/24366-239fce841e5ca0fdc0bcd2bba4deaabb.png"
+                            alt="Picanha Maturada">
+                        <div class="g-overlay">
+                            <div class="g-label">PICANHA MATURADA</div>
+                            <div class="g-sublabel">Corte premium da casa</div>
+                        </div>
+                    </div>
+                    <div class="g-item reveal delay-3">
+                        <img src="https://github.com/jefdesignerf5/meinhaus/blob/main/sal%C3%A3o%20principal.png?raw=true"
+                            alt="Salão Principal">
+                        <div class="g-overlay">
+                            <div class="g-label">SALÃO PRINCIPAL</div>
+                            <div class="g-sublabel">Ambiente para 280 pessoas</div>
+                        </div>
+                    </div>
+                    <div class="g-item reveal delay-2">
+                        <img src="https://github.com/jefdesignerf5/meinhaus/blob/main/buffet%20completo.png?raw=true"
+                            alt="Buffet Completo">
+                        <div class="g-overlay">
+                            <div class="g-label">BUFFET COMPLETO</div>
+                            <div class="g-sublabel">+40 itens à sua escolha</div>
+                        </div>
+                    </div>
+                    <div class="g-item reveal delay-3">
+                        <img src="https://github.com/jefdesignerf5/meinhaus/blob/main/experiencia%20completa.png?raw=true"
+                            alt="Experiência Completa">
+                        <div class="g-overlay">
+                            <div class="g-label">EXPERIÊNCIA COMPLETA</div>
+                            <div class="g-sublabel">Tradição em cada detalhe</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faixa-horarios reveal">
+                <div class="container">
+                    <div class="horarios-grid">
+                        <div class="horario-col">
+                            <div class="horario-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg>
+                            </div>
+                            <div class="horario-label">SEG · TER · QUA · QUI · SEX</div>
+                            <div class="horario-linha">
+                                <span>Almoço</span>
+                                <span>11h30 — 15h</span>
+                            </div>
+                            <div class="horario-linha">
+                                <span>Jantar</span>
+                                <span>19h — 23h</span>
+                            </div>
+                        </div>
+                        <div class="horario-col">
+                            <div class="horario-icon">
+                                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                            </div>
+                            <div class="horario-label">FIM DE SEMANA</div>
+                            <div class="horario-linha">
+                                <span>Sábado</span>
+                                <span>11h30 — 16h · 19h — 23h</span>
+                            </div>
+                            <div class="horario-linha">
+                                <span>Domingo</span>
+                                <span>11h30 — 16h</span>
+                            </div>
+                        </div>
+                        <div class="horario-col">
+                            <div class="horario-cta-text">Estamos abertos e <em>prontos</em> para te receber.</div>
+                            <a href="#reserva" class="btn-dourado" style="text-align: center;">RESERVAR AGORA</a>
+                            <div class="horario-nota">
+                                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+                                Atendimento via WhatsApp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 - LOCALIZAÇÃO -->
+        <section class="s-localizacao">
+            <div class="container">
+                <div class="local-header reveal">
+                    <span class="eyebrow">COMO CHEGAR</span>
+                    <h2>No coração de <em>São José, SC.</em></h2>
+                </div>
+                <div class="local-grid">
+                    <div class="local-mapa reveal">
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.273617300481!2d-48.60454762366113!3d-27.585065976253164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952737ed07590d97%3A0xe54e60931d87e074!2sR.%20Papa%20Jo%C3%A3o%20XXIII%2C%2025%20-%20Campinas%2C%20S%C3%A3o%20Jos%C3%A9%20-%20SC%2C%2088101-310!5e0!3m2!1spt-BR!2sbr!4v1714073351234!5m2!1spt-BR!2sbr"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <a href="https://maps.google.com/?q=R.+Papa+João+XXIII,+25+-+Campinas,+São+José+-+SC"
+                            target="_blank" rel="noopener" class="link-dourado">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                            </svg>
+                            Abrir rota no Google Maps
+                        </a>
+                    </div>
+                    <div class="local-info reveal delay-1">
+                        <div class="info-block">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">ENDEREÇO</div>
+                                <div class="info-valor">R. Papa João XXIII, 25</div>
+                                <div class="info-detalhe">Campinas · São José, SC<br>CEP 88101-310</div>
+                            </div>
+                        </div>
+                        <div class="info-block">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">SEG A SEX</div>
+                                <div class="info-valor">11h30 — 15h · 19h — 23h</div>
+                                <div class="info-detalhe">Almoço e jantar</div>
+                            </div>
+                        </div>
+                        <div class="info-block">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">FIM DE SEMANA</div>
+                                <div class="info-valor">Sáb: 11h30—16h · 19h—23h</div>
+                                <div class="info-detalhe">Domingo: 11h30 — 16h</div>
+                            </div>
+                        </div>
+
+                        <div class="estrutura-chips">
+                            <span class="chip">
+                                <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                                Estacionamento gratuito
+                            </span>
+                            <span class="chip">
+                                <svg viewBox="0 0 24 24"><path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22v-2z"/></svg>
+                                Ambiente climatizado
+                            </span>
+                            <span class="chip">
+                                <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                                280 lugares
+                            </span>
+                            <span class="chip">
+                                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                                Aceita cartões
+                            </span>
+                            <span class="chip">
+                                <svg viewBox="0 0 24 24"><path d="M5 16c0 3.87 3.13 7 7 7s7-3.13 7-7v-4H5v4zM16.12 4.37l2.1-2.1-.82-.83-2.27 2.27c-.86-.5-1.86-.79-2.93-.79s-2.07.29-2.93.79L6.99 1.44l-.82.83 2.1 2.1C6.91 5.55 6 7.17 6 9v2h12V9c0-1.83-.91-3.45-2.31-4.45z"/></svg>
+                                Espaço para eventos
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7 - CTA + POP-UP -->
+        <section class="s-cta" id="reserva">
+            <div class="container">
+                <div class="cta-grid">
+                    <div class="cta-text reveal">
+                        <span class="eyebrow">RESERVE SUA MESA</span>
+                        <h2>Garanta seu <em>lugar.</em></h2>
+                        <p>Confirme sua reserva em menos de 5 minutos e prepare-se para uma experiência inesquecível.</p>
+
+                        <div class="badge-urgencia">
+                            <div class="badge-dot"></div>
+                            <span id="badge-urgencia-text">RESERVAS ABERTAS · ESTE FIM DE SEMANA</span>
+                        </div>
+
+                        <a href="https://wa.me/5548999558799?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Mein%20Haus." target="_blank" rel="noopener" class="btn-dourado">GARANTIR MINHA RESERVA</a>
+
+                        <div class="cta-features">
+                            <div class="cta-feature">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Sem taxa de reserva
+                            </div>
+                            <div class="cta-feature">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Resposta imediata
+                            </div>
+                            <div class="cta-feature">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Atendimento WhatsApp
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popup-preview reveal delay-1" id="popup">
+                        <div class="popup-header">
+                            <div class="popup-pretag">MEIN HAUS CHURRASCARIA</div>
+                            <h3>Quase <em>lá.</em></h3>
+                            <p>Preencha os dados abaixo e nossa equipe entrará em contato.</p>
+                        </div>
+                        <div class="popup-body">
+                            <form>
+                                <div class="form-group">
+                                    <label class="form-label">NOME COMPLETO</label>
+                                    <input type="text" class="form-input" placeholder="Como podemos te chamar?">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">WHATSAPP</label>
+                                        <input type="tel" class="form-input" placeholder="(48) 99999-9999">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">PESSOAS</label>
+                                        <input type="text" class="form-input" placeholder="Ex: 4">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">DATA E HORÁRIO</label>
+                                    <input type="text" class="form-input" placeholder="Ex: Sábado 12h30">
+                                </div>
+                                <button type="button" class="btn-dourado btn-full">CONFIRMAR RESERVA</button>
+                                <div class="form-privacidade">
+                                    <svg viewBox="0 0 24 24" width="14" height="14">
+                                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
+                                    </svg>
+                                    Seus dados estão 100% seguros.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-brand-block">
+                        <div class="footer-logo-row">
+                            <!-- LOGO: substituir o div abaixo por <img src="./assets/logo-meinhaus-white.png" alt="Mein Haus Churrascaria" style="height: 36px; width: auto; object-fit: contain;"> quando a logo branca for fornecida -->
+                            <div class="footer-logo">Mein <em>Haus</em></div>
+                            <div class="footer-social">
+                                <a href="https://www.instagram.com/churrascariameinhaus/" target="_blank" rel="noopener" aria-label="Instagram">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                </a>
+                                <a href="https://www.facebook.com/churrascariameinhaus" target="_blank" rel="noopener" aria-label="Facebook">
+                                    <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="footer-tagline">22 anos servindo o melhor churrasco gaúcho de São José com tradição, qualidade e carinho.</p>
+                    </div>
+
+                    <div class="footer-col">
+                        <h5>Navegue</h5>
+                        <ul>
+                            <li><a href="#cardapio">Cardápio</a></li>
+                            <li><a href="#reserva">Reservas</a></li>
+                            <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Galeria</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h5>Contato</h5>
+                        <ul>
+                            <li><span>(48) 99955-8799</span></li>
+                            <li><span>(48) 3261-4739</span></li>
+                            <li><a href="mailto:contato@churrascariameinhaus.com.br">contato@meinhaus.com.br</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h5>Horários</h5>
+                        <ul>
+                            <li><span>Seg–Sex · 11h30—15h · 19h—23h</span></li>
+                            <li><span>Sábado · 11h30—16h · 19h—23h</span></li>
+                            <li><span>Domingo · 11h30—16h</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-copy">&copy; 2024 Mein Haus Churrascaria · Todos os direitos reservados.</div>
+                    <div class="footer-credit">R. Papa João XXIII, 25 · Campinas, São José—SC</div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Reveal on scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Badge urgência dinâmica por dia da semana
+            const badgeEl = document.getElementById('badge-urgencia-text');
+            if (badgeEl) {
+                const day = new Date().getDay(); // 0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sab
+                const isFimDeSemanaProximo = (day === 4 || day === 5 || day === 6 || day === 0);
+                badgeEl.textContent = isFimDeSemanaProximo
+                    ? 'RESERVAS ABERTAS PARA ESTE FIM DE SEMANA'
+                    : 'RESERVE PARA O PRÓXIMO FIM DE SEMANA';
+            }
+
+            // Carrossel de produtos
+            initCarousel();
+        });
+
+        function initCarousel() {
+            const track = document.querySelector('.carousel-track');
+            const cards = document.querySelectorAll('.carousel-card');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            const dotsContainer = document.querySelector('.carousel-dots');
+
+            if (!track || !cards.length || !prevBtn || !nextBtn) return;
+
+            const totalCards = cards.length;
+            const GAP = 24;
+
+            const getVisibleCards = () => window.innerWidth > 992 ? 3 : 1;
+
+            let visibleCards = getVisibleCards();
+            let totalSlides = Math.max(1, totalCards - visibleCards + 1);
+            let currentIndex = 0;
+
+            function buildDots() {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', 'Ir para slide ' + (i + 1));
+                    dot.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function update() {
+                const cardWidth = cards[0].getBoundingClientRect().width;
+                const offset = currentIndex * (cardWidth + GAP);
+                track.style.transform = 'translateX(-' + offset + 'px)';
+
+                document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            function goTo(i) {
+                currentIndex = Math.max(0, Math.min(totalSlides - 1, i));
+                update();
+            }
+
+            function next() {
+                currentIndex = currentIndex >= totalSlides - 1 ? 0 : currentIndex + 1;
+                update();
+            }
+
+            function prev() {
+                currentIndex = currentIndex <= 0 ? totalSlides - 1 : currentIndex - 1;
+                update();
+            }
+
+            nextBtn.addEventListener('click', next);
+            prevBtn.addEventListener('click', prev);
+
+            // Swipe touch
+            let touchStartX = 0;
+            let touchEndX = 0;
+            const viewport = document.querySelector('.carousel-viewport');
+            if (viewport) {
+                viewport.addEventListener('touchstart', e => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+                viewport.addEventListener('touchend', e => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    const diff = touchEndX - touchStartX;
+                    if (diff < -50) next();
+                    else if (diff > 50) prev();
+                }, { passive: true });
+            }
+
+            // Resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    const newVisible = getVisibleCards();
+                    if (newVisible !== visibleCards) {
+                        visibleCards = newVisible;
+                        totalSlides = Math.max(1, totalCards - visibleCards + 1);
+                        currentIndex = 0;
+                        buildDots();
+                    }
+                    update();
+                }, 150);
+            });
+
+            buildDots();
+            update();
+        }
+    </script>
+</body>
+
+</html>
