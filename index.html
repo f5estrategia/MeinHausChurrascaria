@@ -303,18 +303,6 @@
             background-color: var(--dourado);
         }
 
-        .hero-eyebrow .badge-22 {
-            background: rgba(254, 81, 5, 0.12);
-            border: 1px solid rgba(254, 81, 5, 0.4);
-            color: var(--dourado);
-            padding: 6px 14px;
-            font-size: 10px;
-            letter-spacing: 2.5px;
-            font-weight: 600;
-            text-transform: uppercase;
-            border-radius: 2px;
-        }
-
         .hero h1 {
             color: var(--branco);
             font-size: 64px;
@@ -538,10 +526,7 @@
         }
 
         .autoridade-top {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .autoridade-title {
@@ -570,16 +555,6 @@
             font-weight: 600;
         }
 
-        .autoridade-text {
-            color: var(--texto-suave);
-            font-weight: 300;
-            text-align: right;
-            font-size: 18px;
-            display: flex;
-            align-items: flex-end;
-            line-height: 1.85;
-        }
-
         .historia-bloco {
             background-color: var(--bege-claro);
             border-radius: 8px;
@@ -599,7 +574,7 @@
             background-color: #2A1608;
             position: relative;
             min-height: 480px;
-            background-image: url('https://github.com/jefdesignerf5/meinhaus/blob/main/foto%2002%20nossa%20historia.png?raw=true');
+            background-image: url('https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/magnific__melhore-essa-imagem-removendo-carros-e-pessoas-dei__50995.png?raw=true');
             background-size: cover;
             background-position: center;
         }
@@ -689,7 +664,7 @@
 
         .diferenciais-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 32px;
         }
 
@@ -1106,6 +1081,17 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(circle at center, rgba(254, 81, 5, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .carousel-img img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .carousel-content {
@@ -1849,11 +1835,10 @@
             background: radial-gradient(circle, rgba(254, 81, 5, 0.05) 0%, transparent 60%);
         }
 
-        .cta-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 80px;
-            align-items: center;
+        .cta-text-centered {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
             position: relative;
             z-index: 2;
         }
@@ -1878,7 +1863,12 @@
             margin-bottom: 36px;
             font-weight: 300;
             line-height: 1.6;
-            max-width: 480px;
+        }
+
+        .cta-text-centered p {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 540px;
         }
 
         @keyframes pulse-dot {
@@ -1942,22 +1932,55 @@
             display: block;
         }
 
-        .popup-preview {
-            border: 0.5px solid rgba(254, 81, 5, 0.3);
+        /* RESERVA POPUP MODAL */
+        @keyframes reserva-fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes reserva-slide-up {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reserva-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            animation: reserva-fade-in 250ms ease-out;
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+
+        .reserva-overlay.is-open {
+            display: flex;
+        }
+
+        .reserva-modal {
+            background: #FFFFFF;
+            width: 100%;
+            max-width: 420px;
             border-radius: 10px;
             overflow: hidden;
-            background-color: var(--branco);
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(254, 81, 5, 0.1);
-        }
-
-        .popup-header {
-            background: linear-gradient(135deg, var(--marrom-medio) 0%, #221408 100%);
-            padding: 44px 44px 38px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+            animation: reserva-slide-up 250ms ease-out;
             position: relative;
-            overflow: hidden;
+            max-height: calc(100vh - 32px);
+            overflow-y: auto;
         }
 
-        .popup-header::before {
+        .reserva-header {
+            background: #1A0A00;
+            padding: 26px 28px 22px;
+            position: relative;
+        }
+
+        .reserva-header::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1967,99 +1990,200 @@
             background: var(--gradient-ouro);
         }
 
-        .popup-pretag {
-            color: var(--dourado);
-            font-size: 11px;
-            letter-spacing: 2.8px;
-            margin-bottom: 14px;
+        .reserva-eyebrow {
+            color: #FE5105;
+            font-size: 9px;
+            letter-spacing: 2.5px;
             font-weight: 600;
             text-transform: uppercase;
-        }
-
-        .popup-header h3 {
-            color: var(--branco);
-            font-size: 36px;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .popup-header h3 em {
-            color: var(--dourado);
-            font-style: italic;
-            font-family: var(--font-cormorant);
-        }
-
-        .popup-header p {
-            color: rgba(255, 255, 255, 0.55);
-            font-size: 16px;
-            font-weight: 300;
-        }
-
-        .popup-body {
-            padding: 38px 44px 40px;
-        }
-
-        .form-group {
-            margin-bottom: 22px;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 10px;
-            color: var(--texto-suave);
             margin-bottom: 10px;
-            letter-spacing: 2px;
-            font-weight: 600;
-            text-transform: uppercase;
         }
 
-        .form-input {
-            width: 100%;
-            border: 1px solid #E0D8C8;
-            padding: 16px 20px;
-            font-family: var(--font-jost);
-            font-size: 15px;
-            border-radius: 4px;
-            transition: all 0.3s;
-            color: var(--marrom-escuro);
-            background: #FCFAF6;
+        .reserva-titulo {
+            font-family: 'Playfair Display', serif;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1.2;
+            margin-bottom: 8px;
         }
 
-        .form-input::placeholder {
-            color: #B5AC9C;
+        .reserva-subtitulo {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 1.5;
         }
 
-        .form-input:focus {
-            outline: none;
-            border-color: var(--dourado);
-            background: var(--branco);
-            box-shadow: 0 0 0 4px rgba(254, 81, 5, 0.12);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-
-        .btn-full {
-            width: 100%;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .form-privacidade {
+        .reserva-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            font-size: 22px;
+            line-height: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            color: #999;
-            font-size: 13px;
-            margin-top: 22px;
+            border-radius: 50%;
+            padding: 0;
+            transition: color 0.2s, background 0.2s;
         }
 
-        .form-privacidade svg {
+        .reserva-close:hover {
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .reserva-body {
+            background: #FFFFFF;
+            padding: 28px;
+        }
+
+        .reserva-form-group {
+            margin-bottom: 16px;
+        }
+
+        .reserva-label {
+            display: block;
+            font-size: 8px;
+            color: #888;
+            margin-bottom: 8px;
+            letter-spacing: 1.8px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .reserva-input {
+            width: 100%;
+            border: 0.5px solid #E0D4C4;
+            padding: 12px 14px;
+            font-family: var(--font-jost);
+            font-size: 15px;
+            border-radius: 4px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            color: var(--marrom-escuro);
+            background: #FFFFFF;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .reserva-input::placeholder {
+            color: #C4B8A6;
+            font-weight: 300;
+        }
+
+        .reserva-input:focus {
+            outline: none;
+            border-color: #FE5105;
+            box-shadow: 0 0 0 3px rgba(254, 81, 5, 0.12);
+        }
+
+        .reserva-input.is-invalid {
+            border-color: #FE5105;
+            background: #FFF5F0;
+        }
+
+        .reserva-error {
+            display: none;
+            color: #FE5105;
+            font-size: 11px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .reserva-error.is-visible {
+            display: block;
+        }
+
+        .reserva-submit {
+            background: #FE5105;
+            color: #FFFFFF;
+            width: 100%;
+            padding: 14px;
+            border-radius: 4px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            font-size: 11px;
+            border: none;
+            cursor: pointer;
+            margin-top: 8px;
+            font-family: var(--font-jost);
+            text-transform: uppercase;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .reserva-submit:hover {
+            background: #C73E04;
+            transform: translateY(-1px);
+        }
+
+        .reserva-submit:active {
+            transform: translateY(0);
+        }
+
+        .reserva-privacidade {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: rgba(0, 0, 0, 0.35);
+            font-size: 10px;
+            margin-top: 16px;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .reserva-privacidade svg {
             fill: currentColor;
+            flex-shrink: 0;
+            width: 11px;
+            height: 11px;
+        }
+
+        .reserva-sucesso {
+            text-align: center;
+            padding: 12px 0 4px;
+        }
+
+        .reserva-sucesso-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: rgba(254, 81, 5, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reserva-sucesso-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: #FE5105;
+        }
+
+        .reserva-sucesso h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--marrom-escuro);
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .reserva-sucesso p {
+            color: var(--texto-suave);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        body.reserva-open {
+            overflow: hidden;
         }
 
         /* FOOTER */
@@ -2286,9 +2410,7 @@
                 height: 60px;
             }
 
-            .autoridade-top,
             .historia-bloco,
-            .cta-grid,
             .local-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -2310,17 +2432,13 @@
                 padding: 50px 30px;
             }
 
-            .autoridade-text {
-                text-align: left;
-            }
-
             .diferenciais-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
                 gap: 18px;
             }
 
             .dif-card {
-                padding: 32px 22px;
+                padding: 0 0 32px;
             }
 
             .cards-grid,
@@ -2427,14 +2545,60 @@
                 height: 28px;
             }
 
-            .popup-header,
-            .popup-body {
-                padding-left: 28px;
-                padding-right: 28px;
+            .reserva-header {
+                padding: 22px 22px 18px;
             }
 
-            .popup-header h3 {
-                font-size: 28px;
+            .reserva-body {
+                padding: 22px;
+            }
+
+            .reserva-titulo {
+                font-size: 20px;
+            }
+
+            .s-autoridade,
+            .s-diferenciais,
+            .s-video,
+            .s-cardapio,
+            .s-localizacao {
+                padding: 60px 0;
+            }
+
+            .s-galeria {
+                padding-top: 60px;
+            }
+
+            .s-cta {
+                padding: 60px 0;
+            }
+
+            .faixa-horarios {
+                margin-top: 50px;
+            }
+
+            .autoridade-top {
+                margin-bottom: 36px;
+            }
+
+            .diferenciais-header,
+            .cardapio-header,
+            .galeria-header,
+            .local-header,
+            .video-header {
+                margin-bottom: 36px;
+            }
+
+            .carousel-section {
+                margin-bottom: 50px;
+            }
+
+            .cards-grid {
+                margin-bottom: 50px;
+            }
+
+            .cta-text p {
+                font-size: 16px;
             }
         }
 
@@ -2451,8 +2615,23 @@
                 padding: 0 20px;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
+            .reserva-titulo {
+                font-size: 19px;
+            }
+
+            .btn-dourado {
+                padding: 16px 28px;
+                font-size: 13px;
+                width: 100%;
+                max-width: 360px;
+            }
+
+            .hero-actions .btn-dourado {
+                width: 100%;
+            }
+
+            .precos-bloco .btn-dourado {
+                width: 100%;
             }
         }
     </style>
@@ -2491,8 +2670,6 @@
             <div class="container" style="position: relative; z-index: 2; width: 100%;">
                 <div class="hero-content reveal">
                     <div class="hero-eyebrow">
-                        <span class="badge-22">DESDE 2002</span>
-                        <span class="eyebrow">SÃO JOSÉ · SC</span>
                         <div class="line"></div>
                     </div>
                     <h1>O melhor espeto corrido&nbsp;da <span>Grande Florianópolis.</span></h1>
@@ -2500,7 +2677,7 @@
                     <p class="hero-lead">22 anos dominando a arte do churrasco gaúcho. Cortes nobres, espeto corrido completo e o sabor inconfundível da brasa em cada fatia.</p>
 
                     <div class="hero-actions">
-                        <a href="#reserva" class="btn-dourado">GARANTIR MINHA RESERVA</a>
+                        <button type="button" onclick="openReservaPopup()" class="btn-dourado">GARANTIR MINHA RESERVA</button>
                     </div>
 
                     <div class="hero-reviews">
@@ -2522,7 +2699,7 @@
         <section class="s-video">
             <div class="container">
                 <div class="video-header reveal">
-                    <h2>Sinta a experiência <em>Mein Haus.</em></h2>
+                    <h2>Sinta a experiência.</h2>
                     <p class="subtitle">Um pouco do nosso ambiente, dos cortes na brasa e da paixão que coloca em cada detalhe.</p>
                 </div>
 
@@ -2604,14 +2781,12 @@
                         <span class="eyebrow" style="margin-bottom: 14px; display: block;">NOSSA HISTÓRIA</span>
                         <h2>Referência em churrasco há <span>22 anos.</span></h2>
                     </div>
-                    <div class="autoridade-text">
-                        <p>Nossa história começou em São José com o propósito de oferecer o mais autêntico e suculento churrasco da região, unindo qualidade excepcional, ambiente acolhedor e o atendimento que só uma casa de tradição pode entregar.</p>
-                    </div>
                 </div>
 
                 <div class="historia-bloco reveal delay-1">
                     <div class="historia-img"></div>
                     <div class="historia-content">
+                        <p>Nossa história começou em São José com o propósito de oferecer o mais autêntico e suculento churrasco da região, unindo qualidade excepcional, ambiente acolhedor e o atendimento que só uma casa de tradição pode entregar.</p>
                         <span class="assinatura">— Família Mein Haus</span>
                     </div>
                 </div>
@@ -2627,38 +2802,27 @@
 
                 <div class="diferenciais-grid">
                     <div class="dif-card reveal delay-1">
-                        <!-- IMG PENDENTE: copiar arquivo img-cortes-premium.jpg para /assets/ -->
-                        <img src="./assets/img-cortes-premium.jpg"
+                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2023-03-15%20(1).webp?raw=true"
                              alt="Cortes Premium Mein Haus"
                              class="dif-img-real"
-                             onerror="this.outerHTML='<div class=&quot;dif-img&quot;>[foto: picanha fatiada ou espeto na brasa]</div>';">
+                             loading="lazy">
                         <h4>Cortes Premium</h4>
                         <p>Picanha maturada, costela 12h, fraldinha e mais de 20 cortes nobres no espeto.</p>
                     </div>
                     <div class="dif-card reveal delay-2">
-                        <!-- IMG PENDENTE: copiar arquivo img-buffet-completo.jpg para /assets/ -->
-                        <img src="./assets/img-buffet-completo.jpg"
+                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2025-11-07.webp?raw=true"
                              alt="Buffet Completo Mein Haus"
                              class="dif-img-real"
-                             onerror="this.outerHTML='<div class=&quot;dif-img&quot;>[foto: mesa de saladas e acompanhamentos]</div>';">
+                             loading="lazy">
                         <h4>Buffet Completo</h4>
                         <p>Mais de 40 itens entre saladas, antepastos, guarnições quentes e acompanhamentos premium.</p>
                     </div>
                     <div class="dif-card reveal delay-3">
-                        <!-- IMG PENDENTE: copiar arquivo img-tudo-incluso.jpg para /assets/ -->
-                        <img src="./assets/img-tudo-incluso.jpg"
-                             alt="Tudo Incluso Mein Haus"
-                             class="dif-img-real"
-                             onerror="this.outerHTML='<div class=&quot;dif-img&quot;>[foto: mesa posta com pratos e taças]</div>';">
-                        <h4>Tudo Incluso</h4>
-                        <p>Um único valor por pessoa: rodízio completo e buffet. Sem surpresas na conta.</p>
-                    </div>
-                    <div class="dif-card reveal delay-4">
-                        <!-- IMG PENDENTE: copiar arquivo img-ambiente-familiar.jpg para /assets/ -->
-                        <img src="./assets/img-ambiente-familiar.jpg"
+                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/sal%C3%A3o%20principal.png?raw=true"
                              alt="Ambiente Familiar Mein Haus"
                              class="dif-img-real"
-                             onerror="this.outerHTML='<div class=&quot;dif-img&quot;>[foto: salão da churrascaria com famílias]</div>';">
+                             style="object-position: center bottom;"
+                             loading="lazy">
                         <h4>Ambiente Familiar</h4>
                         <p>280 lugares, estacionamento próprio gratuito e espaço pensado para receber a família toda.</p>
                     </div>
@@ -2686,59 +2850,66 @@
                         <div class="carousel-viewport">
                             <div class="carousel-track">
                                 <div class="carousel-card">
-                                    <div class="carousel-img">[foto: picanha fatiada na brasa]</div>
+                                    <div class="carousel-img">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/image%20(49).png?raw=true" alt="Picanha maturada" loading="lazy">
+                                    </div>
                                     <div class="carousel-content">
                                         <h4>Picanha maturada</h4>
                                         <p>Corte premium, ponto perfeito na brasa</p>
                                     </div>
                                 </div>
                                 <div class="carousel-card">
-                                    <div class="carousel-img">[foto: costela no bafo]</div>
+                                    <div class="carousel-img">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2023-03-15%20(2).webp?raw=true" alt="Costela rústica 12h" loading="lazy">
+                                    </div>
                                     <div class="carousel-content">
                                         <h4>Costela rústica 12h</h4>
                                         <p>Cozimento lento no bafo, desfiando no garfo</p>
                                     </div>
                                 </div>
                                 <div class="carousel-card">
-                                    <div class="carousel-img">[foto: fraldinha na grelha]</div>
+                                    <div class="carousel-img">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/Dia%20das%20M%C3%A3es%20Mein%20Haus.png?raw=true" alt="Fraldinha" loading="lazy">
+                                    </div>
                                     <div class="carousel-content">
                                         <h4>Fraldinha</h4>
                                         <p>Macia, suculenta, com aquela crosta perfeita</p>
                                     </div>
                                 </div>
                                 <div class="carousel-card">
-                                    <div class="carousel-img">[foto: maminha fatiada]</div>
+                                    <div class="carousel-img">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2025-11-07%20(1).webp?raw=true" alt="Maminha" loading="lazy">
+                                    </div>
                                     <div class="carousel-content">
                                         <h4>Maminha</h4>
                                         <p>Corte nobre, sabor marcante</p>
                                     </div>
                                 </div>
                                 <div class="carousel-card">
-                                    <div class="carousel-img">[foto: linguiça na brasa]</div>
+                                    <div class="carousel-img">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/SaveClip.App_540503772_1102235335386436_150855831183921799_n.jpg?raw=true" alt="Linguiça artesanal" loading="lazy">
+                                    </div>
                                     <div class="carousel-content">
                                         <h4>Linguiça artesanal</h4>
                                         <p>Feita com tempero da casa</p>
                                     </div>
                                 </div>
                                 <div class="carousel-card">
-                                    <div class="carousel-img">[foto: frango na churrasqueira]</div>
+                                    <div class="carousel-img">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/SaveClip.App_531797549_1091098159833487_8643719262671872899_n.jpg?raw=true" alt="Frango na brasa" loading="lazy">
+                                    </div>
                                     <div class="carousel-content">
                                         <h4>Frango na brasa</h4>
                                         <p>Suculento por dentro, crocante por fora</p>
                                     </div>
                                 </div>
                                 <div class="carousel-card">
-                                    <div class="carousel-img">[foto: mesa de saladas]</div>
+                                    <div class="carousel-img">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2023-03-15%20(5).webp?raw=true" alt="Saladas variadas" loading="lazy">
+                                    </div>
                                     <div class="carousel-content">
                                         <h4>Saladas variadas</h4>
                                         <p>Mais de 15 opções frescas no buffet</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="carousel-img">[foto: pão de queijo]</div>
-                                    <div class="carousel-content">
-                                        <h4>Pão de queijo artesanal</h4>
-                                        <p>Quentinho, direto do forno</p>
                                     </div>
                                 </div>
                             </div>
@@ -2770,7 +2941,7 @@
                         </div>
                     </div>
                     <div class="precos-nota">* Valores promocionais sujeitos a alteração em feriados e datas especiais.</div>
-                    <a href="#reserva" class="btn-dourado">RESERVAR MINHA MESA</a>
+                    <button type="button" onclick="openReservaPopup()" class="btn-dourado">RESERVAR MINHA MESA</button>
                 </div>
             </div>
         </section>
@@ -2899,54 +3070,15 @@
             </div>
         </section>
 
-        <!-- SECTION 7 - CTA + POP-UP -->
+        <!-- SECTION 7 - CTA -->
         <section class="s-cta" id="reserva">
             <div class="container">
-                <div class="cta-grid">
-                    <div class="cta-text reveal">
-                        <span class="eyebrow">RESERVE SUA MESA</span>
-                        <h2>Garanta seu <em>lugar.</em></h2>
-                        <p>Confirme sua reserva em menos de 5 minutos e prepare-se para uma experiência inesquecível.</p>
+                <div class="cta-text cta-text-centered reveal">
+                    <span class="eyebrow">RESERVE SUA MESA</span>
+                    <h2>Garanta seu <em>lugar.</em></h2>
+                    <p>Confirme sua reserva em menos de 5 minutos e prepare-se para uma experiência inesquecível.</p>
 
-                        <a href="https://wa.me/5548999558799?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Mein%20Haus." target="_blank" rel="noopener" class="btn-dourado">GARANTIR MINHA RESERVA</a>
-                    </div>
-
-                    <div class="popup-preview reveal delay-1" id="popup">
-                        <div class="popup-header">
-                            <div class="popup-pretag">MEIN HAUS CHURRASCARIA</div>
-                            <h3>Quase <em>lá.</em></h3>
-                            <p>Preencha os dados abaixo e nossa equipe entrará em contato.</p>
-                        </div>
-                        <div class="popup-body">
-                            <form>
-                                <div class="form-group">
-                                    <label class="form-label">NOME COMPLETO</label>
-                                    <input type="text" class="form-input" placeholder="Como podemos te chamar?">
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label class="form-label">WHATSAPP</label>
-                                        <input type="tel" class="form-input" placeholder="(48) 99999-9999">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">PESSOAS</label>
-                                        <input type="text" class="form-input" placeholder="Ex: 4">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">DATA E HORÁRIO</label>
-                                    <input type="text" class="form-input" placeholder="Ex: Sábado 12h30">
-                                </div>
-                                <button type="button" class="btn-dourado btn-full">CONFIRMAR RESERVA</button>
-                                <div class="form-privacidade">
-                                    <svg viewBox="0 0 24 24" width="14" height="14">
-                                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
-                                    </svg>
-                                    Seus dados estão 100% seguros.
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <button type="button" onclick="openReservaPopup()" class="btn-dourado">GARANTIR MINHA RESERVA</button>
                 </div>
             </div>
         </section>
@@ -2968,8 +3100,165 @@
 
     </div>
 
+    <!-- POPUP DE RESERVA -->
+    <div class="reserva-overlay" id="reservaOverlay" role="dialog" aria-modal="true" aria-labelledby="reservaTitulo" aria-hidden="true">
+        <div class="reserva-modal" role="document">
+            <div class="reserva-header">
+                <button type="button" class="reserva-close" onclick="closeReservaPopup()" aria-label="Fechar">&times;</button>
+                <div class="reserva-eyebrow">MEIN HAUS CHURRASCARIA</div>
+                <h3 class="reserva-titulo" id="reservaTitulo">Garantir reserva.</h3>
+                <p class="reserva-subtitulo">Preencha abaixo e entraremos em contato via WhatsApp.</p>
+            </div>
+            <div class="reserva-body">
+                <form id="reservaForm" novalidate>
+                    <div class="reserva-form-group">
+                        <label class="reserva-label" for="reservaNome">SEU NOME</label>
+                        <input type="text" class="reserva-input" id="reservaNome" name="nome" placeholder="Como prefere ser chamado?" autocomplete="name" required>
+                        <div class="reserva-error" id="reservaNomeError">Informe um nome com no mínimo 3 caracteres.</div>
+                    </div>
+                    <div class="reserva-form-group">
+                        <label class="reserva-label" for="reservaWhats">WHATSAPP COM DDD</label>
+                        <input type="tel" class="reserva-input" id="reservaWhats" name="whatsapp" placeholder="(48) 99999-9999" inputmode="numeric" autocomplete="tel" required>
+                        <div class="reserva-error" id="reservaWhatsError">Informe um WhatsApp válido com DDD.</div>
+                    </div>
+                    <button type="submit" class="reserva-submit">GARANTIR MINHA RESERVA</button>
+                    <div class="reserva-privacidade">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg>
+                        Seus dados são usados apenas para confirmar sua reserva. Sem spam.
+                    </div>
+                </form>
+                <div class="reserva-sucesso" id="reservaSucesso" style="display: none;">
+                    <div class="reserva-sucesso-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <h4>Reserva confirmada!</h4>
+                    <p>Redirecionando para o WhatsApp da Mein Haus...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // ===== POPUP DE RESERVA =====
+        function openReservaPopup() {
+            const overlay = document.getElementById('reservaOverlay');
+            if (!overlay) return;
+            overlay.classList.add('is-open');
+            overlay.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('reserva-open');
+            // Reset estado
+            const form = document.getElementById('reservaForm');
+            const sucesso = document.getElementById('reservaSucesso');
+            if (form && sucesso) {
+                form.style.display = '';
+                sucesso.style.display = 'none';
+                form.reset();
+                document.querySelectorAll('.reserva-input').forEach(i => i.classList.remove('is-invalid'));
+                document.querySelectorAll('.reserva-error').forEach(e => e.classList.remove('is-visible'));
+            }
+            setTimeout(() => {
+                const nomeInput = document.getElementById('reservaNome');
+                if (nomeInput) nomeInput.focus();
+            }, 280);
+        }
+
+        function closeReservaPopup() {
+            const overlay = document.getElementById('reservaOverlay');
+            if (!overlay) return;
+            overlay.classList.remove('is-open');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('reserva-open');
+        }
+
+        function maskWhatsapp(value) {
+            const digits = value.replace(/\D/g, '').slice(0, 11);
+            if (digits.length === 0) return '';
+            if (digits.length <= 2) return '(' + digits;
+            if (digits.length <= 6) return '(' + digits.slice(0, 2) + ') ' + digits.slice(2);
+            if (digits.length <= 10) return '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 6) + '-' + digits.slice(6);
+            return '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 7) + '-' + digits.slice(7);
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
+            const overlay = document.getElementById('reservaOverlay');
+            const form = document.getElementById('reservaForm');
+            const sucesso = document.getElementById('reservaSucesso');
+            const nomeInput = document.getElementById('reservaNome');
+            const whatsInput = document.getElementById('reservaWhats');
+            const nomeError = document.getElementById('reservaNomeError');
+            const whatsError = document.getElementById('reservaWhatsError');
+
+            // Fecha ao clicar no overlay
+            if (overlay) {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) closeReservaPopup();
+                });
+            }
+
+            // Fecha com ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && overlay && overlay.classList.contains('is-open')) {
+                    closeReservaPopup();
+                }
+            });
+
+            // Máscara whatsapp
+            if (whatsInput) {
+                whatsInput.addEventListener('input', (e) => {
+                    e.target.value = maskWhatsapp(e.target.value);
+                    if (whatsError) {
+                        whatsError.classList.remove('is-visible');
+                        e.target.classList.remove('is-invalid');
+                    }
+                });
+            }
+
+            // Limpa erro ao digitar nome
+            if (nomeInput) {
+                nomeInput.addEventListener('input', () => {
+                    if (nomeError) {
+                        nomeError.classList.remove('is-visible');
+                        nomeInput.classList.remove('is-invalid');
+                    }
+                });
+            }
+
+            // Submit
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    let valid = true;
+
+                    const nome = nomeInput ? nomeInput.value.trim() : '';
+                    const whatsRaw = whatsInput ? whatsInput.value.replace(/\D/g, '') : '';
+
+                    if (nome.length < 3) {
+                        if (nomeError) nomeError.classList.add('is-visible');
+                        if (nomeInput) nomeInput.classList.add('is-invalid');
+                        valid = false;
+                    }
+
+                    if (whatsRaw.length < 10) {
+                        if (whatsError) whatsError.classList.add('is-visible');
+                        if (whatsInput) whatsInput.classList.add('is-invalid');
+                        valid = false;
+                    }
+
+                    if (!valid) return;
+
+                    // Sucesso
+                    form.style.display = 'none';
+                    if (sucesso) sucesso.style.display = 'block';
+
+                    setTimeout(() => {
+                        const msg = 'Olá! Quero garantir minha reserva na Mein Haus. Meu nome é ' + nome;
+                        const url = 'https://wa.me/5548999558799?text=' + encodeURIComponent(msg);
+                        window.open(url, '_blank');
+                        closeReservaPopup();
+                    }, 2000);
+                });
+            }
+
             // Reveal on scroll
             const observerOptions = {
                 root: null,
