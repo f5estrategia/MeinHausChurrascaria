@@ -23,12 +23,12 @@
             --bege-claro: #FAF5EF;
             --bege-medio: #F0E8DA;
             --branco: #FFFFFF;
-            --dourado: #D4AF37;
-            --dourado-light: #FBF5B7;
-            --dourado-dark: #AA771C;
-            --dourado-soft: #C9A84C;
-            --gradient-ouro: linear-gradient(135deg, #AA771C 0%, #D4AF37 25%, #FBF5B7 50%, #D4AF37 75%, #AA771C 100%);
-            --gradient-ouro-soft: linear-gradient(135deg, #B8893A 0%, #D4AF37 50%, #B8893A 100%);
+            --dourado: #FE5105;
+            --dourado-light: #FFB088;
+            --dourado-dark: #C73E04;
+            --dourado-soft: #FE5105;
+            --gradient-ouro: linear-gradient(135deg, #C73E04 0%, #FE5105 50%, #FF7A3F 100%);
+            --gradient-ouro-soft: linear-gradient(135deg, #C73E04 0%, #FE5105 50%, #C73E04 100%);
             --cinza-quente: #8A9070;
             --texto-suave: #5A5448;
 
@@ -117,7 +117,7 @@
             transition: all 0.5s var(--ease-luxe);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(170, 119, 28, 0.3);
+            box-shadow: 0 4px 15px rgba(199, 62, 4, 0.3);
             border-radius: 2px;
         }
 
@@ -142,7 +142,7 @@
         .btn-dourado:hover {
             background-position: right center;
             transform: translateY(-3px);
-            box-shadow: 0 14px 28px rgba(170, 119, 28, 0.4);
+            box-shadow: 0 14px 28px rgba(199, 62, 4, 0.4);
         }
 
         .btn-dourado:active {
@@ -176,13 +176,6 @@
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
-        }
-
-        @keyframes scroll-down {
-            0% { transform: translateY(0); opacity: 0; }
-            40% { opacity: 1; }
-            80% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(20px); opacity: 0; }
         }
 
         @keyframes whatsapp-pulse {
@@ -311,8 +304,8 @@
         }
 
         .hero-eyebrow .badge-22 {
-            background: rgba(212, 175, 55, 0.12);
-            border: 1px solid rgba(212, 175, 55, 0.4);
+            background: rgba(254, 81, 5, 0.12);
+            border: 1px solid rgba(254, 81, 5, 0.4);
             color: var(--dourado);
             padding: 6px 14px;
             font-size: 10px;
@@ -324,9 +317,9 @@
 
         .hero h1 {
             color: var(--branco);
-            font-size: 74px;
+            font-size: 64px;
             margin-bottom: 28px;
-            line-height: 1.02;
+            line-height: 1.05;
             letter-spacing: -1.5px;
             font-weight: 400;
             text-wrap: balance;
@@ -337,7 +330,7 @@
         }
 
         .hero h1 span {
-            color: #C9A84C;
+            color: #FE5105;
             display: block;
             font-weight: 700;
             font-style: italic;
@@ -471,49 +464,12 @@
             margin: 0 4px;
         }
 
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 130px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 5;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            pointer-events: none;
-        }
-
-        .scroll-indicator-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, transparent, var(--dourado));
-            position: relative;
-            overflow: hidden;
-        }
-
-        .scroll-indicator-line::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 12px;
-            background: var(--dourado);
-            animation: scroll-down 2s ease-in-out infinite;
-        }
-
         .hero-bottom-bar {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            border-top: 0.5px solid rgba(201, 168, 76, 0.15);
+            border-top: 0.5px solid rgba(254, 81, 5, 0.15);
             background: rgba(15, 8, 0, 0.55);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
@@ -527,13 +483,13 @@
 
         .hero-stat {
             padding: 28px 24px;
-            border-right: 0.5px solid rgba(201, 168, 76, 0.18);
+            border-right: 0.5px solid rgba(254, 81, 5, 0.18);
             transition: background 0.4s ease;
             position: relative;
         }
 
         .hero-stat:hover {
-            background: rgba(212, 175, 55, 0.04);
+            background: rgba(254, 81, 5, 0.04);
         }
 
         .hero-stat:last-child {
@@ -578,7 +534,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+            background: linear-gradient(to right, transparent, rgba(254, 81, 5, 0.3), transparent);
         }
 
         .autoridade-top {
@@ -703,17 +659,7 @@
             font-family: var(--font-cormorant);
             font-style: italic;
             color: var(--dourado);
-            font-size: 26px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .assinatura::before {
-            content: '';
-            width: 28px;
-            height: 1px;
-            background: var(--dourado);
+            font-size: 28px;
         }
 
         /* SECTION DIFERENCIAIS */
@@ -781,7 +727,16 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.06) 0%, transparent 60%);
+            background: radial-gradient(circle at center, rgba(254, 81, 5, 0.06) 0%, transparent 60%);
+        }
+
+        .dif-img-real {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 28px;
         }
 
         .dif-card::before {
@@ -813,7 +768,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(254, 81, 5, 0.1);
             border-radius: 50%;
             color: var(--dourado);
             transition: all 0.4s var(--ease-luxe);
@@ -864,7 +819,7 @@
             width: 500px;
             height: 500px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(254, 81, 5, 0.05) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -913,20 +868,20 @@
         .video-player {
             max-width: 420px;
             margin: 0 auto 90px;
-            border: 1px solid rgba(201, 168, 76, 0.3);
+            border: 1px solid rgba(254, 81, 5, 0.3);
             border-radius: 10px;
             position: relative;
             aspect-ratio: 9/16;
             background-color: #000;
             overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 60px rgba(212, 175, 55, 0.08);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 60px rgba(254, 81, 5, 0.08);
             transition: transform 0.5s var(--ease-luxe), box-shadow 0.5s;
             z-index: 2;
         }
 
         .video-player:hover {
             transform: translateY(-12px);
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6), 0 0 80px rgba(212, 175, 55, 0.18);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6), 0 0 80px rgba(254, 81, 5, 0.18);
         }
 
         .video-player iframe {
@@ -939,7 +894,7 @@
         }
 
         .reviews {
-            border-top: 1px solid rgba(201, 168, 76, 0.18);
+            border-top: 1px solid rgba(254, 81, 5, 0.18);
             padding-top: 70px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1121,7 +1076,7 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(254, 81, 5, 0.08);
             transition: transform 0.5s var(--ease-luxe), box-shadow 0.5s;
         }
 
@@ -1150,7 +1105,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.06) 0%, transparent 60%);
+            background: radial-gradient(circle at center, rgba(254, 81, 5, 0.06) 0%, transparent 60%);
         }
 
         .carousel-content {
@@ -1182,7 +1137,7 @@
             width: 50px;
             height: 50px;
             background: var(--branco);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(254, 81, 5, 0.3);
             border-radius: 50%;
             color: var(--dourado);
             font-size: 20px;
@@ -1201,7 +1156,7 @@
             background: var(--gradient-ouro);
             color: var(--marrom-escuro);
             transform: translateY(-50%) scale(1.06);
-            box-shadow: 0 10px 24px rgba(170, 119, 28, 0.25);
+            box-shadow: 0 10px 24px rgba(199, 62, 4, 0.25);
         }
 
         .carousel-arrow:disabled {
@@ -1223,7 +1178,7 @@
             width: 9px;
             height: 9px;
             border-radius: 50%;
-            background: rgba(212, 175, 55, 0.25);
+            background: rgba(254, 81, 5, 0.25);
             border: none;
             cursor: pointer;
             padding: 0;
@@ -1231,7 +1186,7 @@
         }
 
         .carousel-dot:hover {
-            background: rgba(212, 175, 55, 0.5);
+            background: rgba(254, 81, 5, 0.5);
         }
 
         .carousel-dot.active {
@@ -1257,7 +1212,7 @@
             border-radius: 6px;
             position: relative;
             transition: all 0.5s var(--ease-luxe);
-            border: 1px solid rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(254, 81, 5, 0.08);
             overflow: hidden;
         }
 
@@ -1280,7 +1235,7 @@
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(254, 81, 5, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1372,7 +1327,7 @@
             right: -50%;
             width: 100%;
             height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+            background: radial-gradient(circle, rgba(254, 81, 5, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -1418,13 +1373,13 @@
         }
 
         .preco-col.highlight {
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.02) 100%);
+            background: linear-gradient(180deg, rgba(254, 81, 5, 0.08) 0%, rgba(254, 81, 5, 0.02) 100%);
             border-top: 2px solid var(--dourado);
             border-bottom: 2px solid var(--dourado);
         }
 
         .preco-col.highlight:hover {
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.04) 100%);
+            background: linear-gradient(180deg, rgba(254, 81, 5, 0.12) 0%, rgba(254, 81, 5, 0.04) 100%);
         }
 
         .badge-popular {
@@ -1572,7 +1527,7 @@
         }
 
         .g-sublabel {
-            color: rgba(212, 175, 55, 0.85);
+            color: rgba(254, 81, 5, 0.85);
             font-family: var(--font-cormorant);
             font-style: italic;
             font-size: 18px;
@@ -1600,14 +1555,14 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.04) 0%, transparent 100%);
+            background: linear-gradient(135deg, rgba(254, 81, 5, 0.04) 0%, transparent 100%);
         }
 
         .horario-icon {
             width: 38px;
             height: 38px;
             border-radius: 50%;
-            background: rgba(212, 175, 55, 0.12);
+            background: rgba(254, 81, 5, 0.12);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1722,7 +1677,7 @@
             background-color: #E0D4C4;
             margin-bottom: 24px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(254, 81, 5, 0.15);
         }
 
         .link-dourado {
@@ -1758,7 +1713,7 @@
             padding: 40px 44px;
             border-radius: 8px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(254, 81, 5, 0.1);
         }
 
         .info-block {
@@ -1779,7 +1734,7 @@
             width: 42px;
             height: 42px;
             border-radius: 50%;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(254, 81, 5, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1845,8 +1800,8 @@
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.22);
+            background: rgba(254, 81, 5, 0.08);
+            border: 1px solid rgba(254, 81, 5, 0.22);
             color: var(--marrom-escuro);
             font-size: 12px;
             font-weight: 500;
@@ -1857,8 +1812,8 @@
         }
 
         .chip:hover {
-            background: rgba(212, 175, 55, 0.15);
-            border-color: rgba(212, 175, 55, 0.4);
+            background: rgba(254, 81, 5, 0.15);
+            border-color: rgba(254, 81, 5, 0.4);
             transform: translateY(-2px);
         }
 
@@ -1867,6 +1822,12 @@
             height: 13px;
             fill: var(--dourado);
             flex-shrink: 0;
+        }
+
+        .chip.chip-destaque {
+            border-width: 1.5px;
+            font-weight: 600;
+            background: rgba(254, 81, 5, 0.1);
         }
 
         /* SECTION 7 - CTA + POP-UP + FOOTER */
@@ -1885,7 +1846,7 @@
             width: 500px;
             height: 500px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(254, 81, 5, 0.05) 0%, transparent 60%);
         }
 
         .cta-grid {
@@ -1921,17 +1882,17 @@
         }
 
         @keyframes pulse-dot {
-            0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.7); }
-            70% { box-shadow: 0 0 0 8px rgba(201, 168, 76, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(254, 81, 5, 0.7); }
+            70% { box-shadow: 0 0 0 8px rgba(254, 81, 5, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(254, 81, 5, 0); }
         }
 
         .badge-urgencia {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            border: 0.5px solid rgba(201, 168, 76, 0.3);
-            background: rgba(212, 175, 55, 0.05);
+            border: 0.5px solid rgba(254, 81, 5, 0.3);
+            background: rgba(254, 81, 5, 0.05);
             padding: 11px 22px;
             border-radius: 40px;
             margin-bottom: 38px;
@@ -1982,11 +1943,11 @@
         }
 
         .popup-preview {
-            border: 0.5px solid rgba(201, 168, 76, 0.3);
+            border: 0.5px solid rgba(254, 81, 5, 0.3);
             border-radius: 10px;
             overflow: hidden;
             background-color: var(--branco);
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(254, 81, 5, 0.1);
         }
 
         .popup-header {
@@ -2072,7 +2033,7 @@
             outline: none;
             border-color: var(--dourado);
             background: var(--branco);
-            box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.12);
+            box-shadow: 0 0 0 4px rgba(254, 81, 5, 0.12);
         }
 
         .form-row {
@@ -2104,9 +2065,23 @@
         /* FOOTER */
         .footer {
             background-color: var(--quase-preto);
-            padding: 70px 0 30px;
-            border-top: 1px solid rgba(212, 175, 55, 0.08);
+            padding: 32px 0;
+            border-top: 1px solid rgba(254, 81, 5, 0.1);
             position: relative;
+        }
+
+        .footer-minimal {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-minimal .footer-copy {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            font-weight: 300;
         }
 
         .footer-top {
@@ -2282,10 +2257,6 @@
 
             .hero-reviews {
                 justify-content: center;
-            }
-
-            .scroll-indicator {
-                display: none;
             }
 
             .hero-bottom-bar .container {
@@ -2490,13 +2461,6 @@
 <body>
     <div class="mh-page-breakout">
 
-        <!-- WHATSAPP FLOATING BUTTON -->
-        <a href="https://wa.me/5548999558799?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Mein%20Haus." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-            </svg>
-        </a>
-
         <!-- SECTION 1 - HERO -->
         <section class="hero">
             <div class="hero-logo-bar">
@@ -2531,16 +2495,12 @@
                         <span class="eyebrow">SÃO JOSÉ · SC</span>
                         <div class="line"></div>
                     </div>
-                    <h1>A melhor carne&nbsp;da <span>Grande Florianópolis.</span></h1>
+                    <h1>O melhor espeto corrido&nbsp;da <span>Grande Florianópolis.</span></h1>
 
                     <p class="hero-lead">22 anos dominando a arte do churrasco gaúcho. Cortes nobres, espeto corrido completo e o sabor inconfundível da brasa em cada fatia.</p>
 
                     <div class="hero-actions">
                         <a href="#reserva" class="btn-dourado">GARANTIR MINHA RESERVA</a>
-                        <a href="#cardapio" class="btn-ghost">
-                            Ver cardápio
-                            <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-                        </a>
                     </div>
 
                     <div class="hero-reviews">
@@ -2556,75 +2516,12 @@
                 </div>
             </div>
 
-            <div class="scroll-indicator">
-                <span>SCROLL</span>
-                <div class="scroll-indicator-line"></div>
-            </div>
         </section>
 
-        <!-- SECTION 2 - AUTORIDADE -->
-        <section class="s-autoridade">
-            <div class="container">
-                <div class="autoridade-top reveal">
-                    <div class="autoridade-title">
-                        <span class="eyebrow" style="margin-bottom: 14px; display: block;">NOSSA HISTÓRIA</span>
-                        <h2>Referência em churrasco há <span>22 anos.</span></h2>
-                    </div>
-                    <div class="autoridade-text">
-                        <p>Nossa história começou em São José com o propósito de oferecer o mais autêntico e suculento churrasco da região — unindo qualidade excepcional, ambiente acolhedor e o atendimento que só uma casa de tradição pode entregar.</p>
-                    </div>
-                </div>
-
-                <div class="historia-bloco reveal delay-1">
-                    <div class="historia-img"></div>
-                    <div class="historia-content">
-                        <span class="eyebrow">FAMÍLIA MEIN HAUS</span>
-                        <h3>Tradição de <em>família.</em></h3>
-                        <p>Uma casa criada para celebrar os bons momentos da vida ao redor de uma mesa farta, cortes selecionados e o aroma inconfundível da brasa.</p>
-                        <span class="assinatura">Família Mein Haus</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION DIFERENCIAIS -->
-        <section class="s-diferenciais">
-            <div class="container">
-                <div class="diferenciais-header reveal">
-                    <span class="eyebrow">POR QUE A MEIN HAUS</span>
-                    <h2>O melhor da brasa, <em>servido a você.</em></h2>
-                </div>
-
-                <div class="diferenciais-grid">
-                    <div class="dif-card reveal delay-1">
-                        <div class="dif-img">[foto: picanha fatiada ou espeto na brasa]</div>
-                        <h4>Cortes Premium</h4>
-                        <p>Picanha maturada, costela 12h, fraldinha e mais de 20 cortes nobres no espeto.</p>
-                    </div>
-                    <div class="dif-card reveal delay-2">
-                        <div class="dif-img">[foto: mesa de saladas e acompanhamentos]</div>
-                        <h4>Buffet Completo</h4>
-                        <p>Mais de 40 itens entre saladas, antepastos, guarnições quentes e sobremesas artesanais.</p>
-                    </div>
-                    <div class="dif-card reveal delay-3">
-                        <div class="dif-img">[foto: mesa posta com pratos e taças]</div>
-                        <h4>Tudo Incluso</h4>
-                        <p>Um único valor por pessoa: rodízio completo, buffet e sobremesas. Sem surpresas na conta.</p>
-                    </div>
-                    <div class="dif-card reveal delay-4">
-                        <div class="dif-img">[foto: salão da churrascaria com famílias]</div>
-                        <h4>Ambiente Familiar</h4>
-                        <p>280 lugares, estacionamento próprio gratuito e espaço pensado para receber a família toda.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 3 - VÍDEO -->
+        <!-- SECTION 2 - VÍDEO -->
         <section class="s-video">
             <div class="container">
                 <div class="video-header reveal">
-                    <span class="eyebrow">CONHEÇA A MEIN HAUS</span>
                     <h2>Sinta a experiência <em>Mein Haus.</em></h2>
                     <p class="subtitle">Um pouco do nosso ambiente, dos cortes na brasa e da paixão que coloca em cada detalhe.</p>
                 </div>
@@ -2699,6 +2596,76 @@
             </div>
         </section>
 
+        <!-- SECTION 3 - AUTORIDADE -->
+        <section class="s-autoridade">
+            <div class="container">
+                <div class="autoridade-top reveal">
+                    <div class="autoridade-title">
+                        <span class="eyebrow" style="margin-bottom: 14px; display: block;">NOSSA HISTÓRIA</span>
+                        <h2>Referência em churrasco há <span>22 anos.</span></h2>
+                    </div>
+                    <div class="autoridade-text">
+                        <p>Nossa história começou em São José com o propósito de oferecer o mais autêntico e suculento churrasco da região, unindo qualidade excepcional, ambiente acolhedor e o atendimento que só uma casa de tradição pode entregar.</p>
+                    </div>
+                </div>
+
+                <div class="historia-bloco reveal delay-1">
+                    <div class="historia-img"></div>
+                    <div class="historia-content">
+                        <span class="assinatura">— Família Mein Haus</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION DIFERENCIAIS -->
+        <section class="s-diferenciais">
+            <div class="container">
+                <div class="diferenciais-header reveal">
+                    <h2>O melhor da brasa, <em>servido a você.</em></h2>
+                </div>
+
+                <div class="diferenciais-grid">
+                    <div class="dif-card reveal delay-1">
+                        <!-- IMG PENDENTE: copiar arquivo img-cortes-premium.jpg para /assets/ -->
+                        <img src="./assets/img-cortes-premium.jpg"
+                             alt="Cortes Premium Mein Haus"
+                             class="dif-img-real"
+                             onerror="this.outerHTML='<div class=&quot;dif-img&quot;>[foto: picanha fatiada ou espeto na brasa]</div>';">
+                        <h4>Cortes Premium</h4>
+                        <p>Picanha maturada, costela 12h, fraldinha e mais de 20 cortes nobres no espeto.</p>
+                    </div>
+                    <div class="dif-card reveal delay-2">
+                        <!-- IMG PENDENTE: copiar arquivo img-buffet-completo.jpg para /assets/ -->
+                        <img src="./assets/img-buffet-completo.jpg"
+                             alt="Buffet Completo Mein Haus"
+                             class="dif-img-real"
+                             onerror="this.outerHTML='<div class=&quot;dif-img&quot;>[foto: mesa de saladas e acompanhamentos]</div>';">
+                        <h4>Buffet Completo</h4>
+                        <p>Mais de 40 itens entre saladas, antepastos, guarnições quentes e acompanhamentos premium.</p>
+                    </div>
+                    <div class="dif-card reveal delay-3">
+                        <!-- IMG PENDENTE: copiar arquivo img-tudo-incluso.jpg para /assets/ -->
+                        <img src="./assets/img-tudo-incluso.jpg"
+                             alt="Tudo Incluso Mein Haus"
+                             class="dif-img-real"
+                             onerror="this.outerHTML='<div class=&quot;dif-img&quot;>[foto: mesa posta com pratos e taças]</div>';">
+                        <h4>Tudo Incluso</h4>
+                        <p>Um único valor por pessoa: rodízio completo e buffet. Sem surpresas na conta.</p>
+                    </div>
+                    <div class="dif-card reveal delay-4">
+                        <!-- IMG PENDENTE: copiar arquivo img-ambiente-familiar.jpg para /assets/ -->
+                        <img src="./assets/img-ambiente-familiar.jpg"
+                             alt="Ambiente Familiar Mein Haus"
+                             class="dif-img-real"
+                             onerror="this.outerHTML='<div class=&quot;dif-img&quot;>[foto: salão da churrascaria com famílias]</div>';">
+                        <h4>Ambiente Familiar</h4>
+                        <p>280 lugares, estacionamento próprio gratuito e espaço pensado para receber a família toda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION 4 - CARDÁPIO -->
         <section class="s-cardapio" id="cardapio">
             <div class="container">
@@ -2710,7 +2677,7 @@
                     </div>
                     <h2>Espeto corrido completo. <em>Buffet à vontade.</em></h2>
                     <div class="ornament">· · ·</div>
-                    <p class="subtitle">Cortes nobres na brasa, buffet completo e acompanhamentos premium. Sobremesas disponíveis à parte.</p>
+                    <p class="subtitle">Cortes nobres na brasa, buffet completo e acompanhamentos premium.</p>
                 </div>
 
                 <div class="carousel-section reveal delay-1">
@@ -2861,48 +2828,6 @@
                 </div>
             </div>
 
-            <div class="faixa-horarios reveal">
-                <div class="container">
-                    <div class="horarios-grid">
-                        <div class="horario-col">
-                            <div class="horario-icon">
-                                <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg>
-                            </div>
-                            <div class="horario-label">SEG · TER · QUA · QUI · SEX</div>
-                            <div class="horario-linha">
-                                <span>Almoço</span>
-                                <span>11h30 — 15h</span>
-                            </div>
-                            <div class="horario-linha">
-                                <span>Jantar</span>
-                                <span>19h — 23h</span>
-                            </div>
-                        </div>
-                        <div class="horario-col">
-                            <div class="horario-icon">
-                                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
-                            </div>
-                            <div class="horario-label">FIM DE SEMANA</div>
-                            <div class="horario-linha">
-                                <span>Sábado</span>
-                                <span>11h30 — 16h · 19h — 23h</span>
-                            </div>
-                            <div class="horario-linha">
-                                <span>Domingo</span>
-                                <span>11h30 — 16h</span>
-                            </div>
-                        </div>
-                        <div class="horario-col">
-                            <div class="horario-cta-text">Estamos abertos e <em>prontos</em> para te receber.</div>
-                            <a href="#reserva" class="btn-dourado" style="text-align: center;">RESERVAR AGORA</a>
-                            <div class="horario-nota">
-                                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
-                                Atendimento via WhatsApp
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- SECTION 6 - LOCALIZAÇÃO -->
@@ -2944,7 +2869,7 @@
                             </div>
                             <div class="info-content">
                                 <div class="info-label">SEG A SEX</div>
-                                <div class="info-valor">11h30 — 15h · 19h — 23h</div>
+                                <div class="info-valor">11h30 às 15h · 19h às 23h</div>
                                 <div class="info-detalhe">Almoço e jantar</div>
                             </div>
                         </div>
@@ -2954,31 +2879,19 @@
                             </div>
                             <div class="info-content">
                                 <div class="info-label">FIM DE SEMANA</div>
-                                <div class="info-valor">Sáb: 11h30—16h · 19h—23h</div>
-                                <div class="info-detalhe">Domingo: 11h30 — 16h</div>
+                                <div class="info-valor">Sáb: 11h30 às 16h · 19h às 23h</div>
+                                <div class="info-detalhe">Domingo: 11h30 às 16h</div>
                             </div>
                         </div>
 
                         <div class="estrutura-chips">
-                            <span class="chip">
+                            <span class="chip chip-destaque">
                                 <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
                                 Estacionamento gratuito
                             </span>
-                            <span class="chip">
+                            <span class="chip chip-destaque">
                                 <svg viewBox="0 0 24 24"><path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22v-2z"/></svg>
                                 Ambiente climatizado
-                            </span>
-                            <span class="chip">
-                                <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                                280 lugares
-                            </span>
-                            <span class="chip">
-                                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
-                                Aceita cartões
-                            </span>
-                            <span class="chip">
-                                <svg viewBox="0 0 24 24"><path d="M5 16c0 3.87 3.13 7 7 7s7-3.13 7-7v-4H5v4zM16.12 4.37l2.1-2.1-.82-.83-2.27 2.27c-.86-.5-1.86-.79-2.93-.79s-2.07.29-2.93.79L6.99 1.44l-.82.83 2.1 2.1C6.91 5.55 6 7.17 6 9v2h12V9c0-1.83-.91-3.45-2.31-4.45z"/></svg>
-                                Espaço para eventos
                             </span>
                         </div>
                     </div>
@@ -2996,21 +2909,6 @@
                         <p>Confirme sua reserva em menos de 5 minutos e prepare-se para uma experiência inesquecível.</p>
 
                         <a href="https://wa.me/5548999558799?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Mein%20Haus." target="_blank" rel="noopener" class="btn-dourado">GARANTIR MINHA RESERVA</a>
-
-                        <div class="cta-features">
-                            <div class="cta-feature">
-                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Sem taxa de reserva
-                            </div>
-                            <div class="cta-feature">
-                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Resposta imediata
-                            </div>
-                            <div class="cta-feature">
-                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Atendimento WhatsApp
-                            </div>
-                        </div>
                     </div>
 
                     <div class="popup-preview reveal delay-1" id="popup">
@@ -3055,57 +2953,15 @@
 
         <!-- FOOTER -->
         <footer class="footer">
-            <div class="container">
-                <div class="footer-top">
-                    <div class="footer-brand-block">
-                        <div class="footer-logo-row">
-                            <img src="https://churrascariameinhaus.com.br/wp-content/webp-express/webp-images/uploads/2023/04/churracaria-mein-haus-logo.png.webp"
-                                 alt="Mein Haus Churrascaria"
-                                 style="height: 48px; width: auto; object-fit: contain; display: block;"
-                                 onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline-block';">
-                            <span id="logo-fallback" style="display:none; font-family: var(--font-playfair), serif; font-size: 26px; color: #fff; letter-spacing: 1px;">Mein <em style="color: var(--dourado); font-style: italic; font-family: var(--font-cormorant);">Haus</em></span>
-                            <div class="footer-social">
-                                <a href="https://www.instagram.com/churrascariameinhaus/" target="_blank" rel="noopener" aria-label="Instagram">
-                                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                                </a>
-                                <a href="https://www.facebook.com/churrascariameinhaus" target="_blank" rel="noopener" aria-label="Facebook">
-                                    <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <p class="footer-tagline">22 anos servindo o melhor churrasco gaúcho de São José com tradição, qualidade e carinho.</p>
-                    </div>
-
-                    <div class="footer-col">
-                        <h5>Navegue</h5>
-                        <ul>
-                            <li><a href="#cardapio">Cardápio</a></li>
-                            <li><a href="#reserva">Reservas</a></li>
-                            <li><a href="#">Eventos</a></li>
-                            <li><a href="#">Galeria</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h5>Contato</h5>
-                        <ul>
-                            <li><a href="mailto:contato@meinhaus.com.br">contato@meinhaus.com.br</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h5>Horários</h5>
-                        <ul>
-                            <li><span>Seg–Sex · 11h30—15h · 19h—23h</span></li>
-                            <li><span>Sábado · 11h30—16h · 19h—23h</span></li>
-                            <li><span>Domingo · 11h30—16h</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer-bottom">
-                    <div class="footer-copy">&copy; 2024 Mein Haus Churrascaria · Todos os direitos reservados.</div>
-                    <div class="footer-credit">R. Papa João XXIII, 25 · Campinas, São José—SC</div>
+            <div class="container footer-minimal">
+                <div class="footer-copy">&copy; 2024 Mein Haus Churrascaria · Todos os direitos reservados.</div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/churrascariameinhaus/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/churrascariameinhaus" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"/></svg>
+                    </a>
                 </div>
             </div>
         </footer>
