@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mein Haus Churrascaria - 22 anos de tradição em São José, SC. Espeto corrido com mais de 20 cortes de carne, buffet completo, ambiente familiar. Reserve sua mesa.">
+    <meta name="description"
+        content="Mein Haus Churrascaria - 24 anos de tradição em São José, SC. Espeto corrido com mais de 15 cortes de carne, buffet completo, ambiente familiar. Reserve sua mesa.">
     <meta name="theme-color" content="#0F0800">
-    <title>Mein Haus Churrascaria | 22 anos de tradição na brasa · São José/SC</title>
+    <title>Mein Haus Churrascaria | 24 anos de tradição na brasa · São José/SC</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -167,21 +168,50 @@
             transform: translateY(0);
         }
 
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
-        .delay-5 { transition-delay: 0.5s; }
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-5 {
+            transition-delay: 0.5s;
+        }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
         @keyframes whatsapp-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6), 0 6px 24px rgba(37, 211, 102, 0.4); }
-            70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0), 0 6px 24px rgba(37, 211, 102, 0.4); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 6px 24px rgba(37, 211, 102, 0.4); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6), 0 6px 24px rgba(37, 211, 102, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 18px rgba(37, 211, 102, 0), 0 6px 24px rgba(37, 211, 102, 0.4);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 6px 24px rgba(37, 211, 102, 0.4);
+            }
         }
 
         /* WHATSAPP FLOATING */
@@ -275,9 +305,12 @@
         }
 
         @keyframes espeto-float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(-50%) rotate(0deg);
             }
+
             50% {
                 transform: translateY(calc(-50% - 16px)) rotate(0.4deg);
             }
@@ -359,27 +392,144 @@
         }
 
         @keyframes rise {
-            0% { transform: translateY(0) translateX(0) scale(0.5); opacity: 0; }
-            20% { opacity: 1; }
-            80% { opacity: 0.8; }
-            100% { transform: translateY(-110vh) translateX(100px) scale(0); opacity: 0; }
+            0% {
+                transform: translateY(0) translateX(0) scale(0.5);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh) translateX(100px) scale(0);
+                opacity: 0;
+            }
         }
 
-        .ember:nth-child(1) { left: 10%; width: 6px; height: 6px; animation-delay: 0s; animation-duration: 5s; }
-        .ember:nth-child(2) { left: 35%; width: 4px; height: 4px; animation-delay: 1.5s; animation-duration: 7s; }
-        .ember:nth-child(3) { left: 55%; width: 8px; height: 8px; animation-delay: 3s; animation-duration: 6s; }
-        .ember:nth-child(4) { left: 75%; width: 5px; height: 5px; animation-delay: 4.5s; animation-duration: 8s; }
-        .ember:nth-child(5) { left: 95%; width: 7px; height: 7px; animation-delay: 2s; animation-duration: 5.5s; }
-        .ember:nth-child(6) { left: 25%; width: 4px; height: 4px; animation-delay: 5s; animation-duration: 9s; }
-        .ember:nth-child(7) { left: 45%; width: 6px; height: 6px; animation-delay: 1s; animation-duration: 6.5s; }
-        .ember:nth-child(8) { left: 65%; width: 5px; height: 5px; animation-delay: 3.5s; animation-duration: 7.5s; }
-        .ember:nth-child(9) { left: 15%; width: 5px; height: 5px; animation-delay: 0.8s; animation-duration: 5.2s; }
-        .ember:nth-child(10) { left: 40%; width: 7px; height: 7px; animation-delay: 2.2s; animation-duration: 6.8s; }
-        .ember:nth-child(11) { left: 60%; width: 4px; height: 4px; animation-delay: 3.8s; animation-duration: 5.5s; }
-        .ember:nth-child(12) { left: 85%; width: 6px; height: 6px; animation-delay: 5.2s; animation-duration: 8.2s; }
-        .ember:nth-child(13) { left: 5%; width: 4px; height: 4px; animation-delay: 1.2s; animation-duration: 6.3s; }
-        .ember:nth-child(14) { left: 50%; width: 8px; height: 8px; animation-delay: 2.8s; animation-duration: 7.1s; }
-        .ember:nth-child(15) { left: 80%; width: 5px; height: 5px; animation-delay: 4.1s; animation-duration: 5.9s; }
+        .ember:nth-child(1) {
+            left: 10%;
+            width: 6px;
+            height: 6px;
+            animation-delay: 0s;
+            animation-duration: 5s;
+        }
+
+        .ember:nth-child(2) {
+            left: 35%;
+            width: 4px;
+            height: 4px;
+            animation-delay: 1.5s;
+            animation-duration: 7s;
+        }
+
+        .ember:nth-child(3) {
+            left: 55%;
+            width: 8px;
+            height: 8px;
+            animation-delay: 3s;
+            animation-duration: 6s;
+        }
+
+        .ember:nth-child(4) {
+            left: 75%;
+            width: 5px;
+            height: 5px;
+            animation-delay: 4.5s;
+            animation-duration: 8s;
+        }
+
+        .ember:nth-child(5) {
+            left: 95%;
+            width: 7px;
+            height: 7px;
+            animation-delay: 2s;
+            animation-duration: 5.5s;
+        }
+
+        .ember:nth-child(6) {
+            left: 25%;
+            width: 4px;
+            height: 4px;
+            animation-delay: 5s;
+            animation-duration: 9s;
+        }
+
+        .ember:nth-child(7) {
+            left: 45%;
+            width: 6px;
+            height: 6px;
+            animation-delay: 1s;
+            animation-duration: 6.5s;
+        }
+
+        .ember:nth-child(8) {
+            left: 65%;
+            width: 5px;
+            height: 5px;
+            animation-delay: 3.5s;
+            animation-duration: 7.5s;
+        }
+
+        .ember:nth-child(9) {
+            left: 15%;
+            width: 5px;
+            height: 5px;
+            animation-delay: 0.8s;
+            animation-duration: 5.2s;
+        }
+
+        .ember:nth-child(10) {
+            left: 40%;
+            width: 7px;
+            height: 7px;
+            animation-delay: 2.2s;
+            animation-duration: 6.8s;
+        }
+
+        .ember:nth-child(11) {
+            left: 60%;
+            width: 4px;
+            height: 4px;
+            animation-delay: 3.8s;
+            animation-duration: 5.5s;
+        }
+
+        .ember:nth-child(12) {
+            left: 85%;
+            width: 6px;
+            height: 6px;
+            animation-delay: 5.2s;
+            animation-duration: 8.2s;
+        }
+
+        .ember:nth-child(13) {
+            left: 5%;
+            width: 4px;
+            height: 4px;
+            animation-delay: 1.2s;
+            animation-duration: 6.3s;
+        }
+
+        .ember:nth-child(14) {
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            animation-delay: 2.8s;
+            animation-duration: 7.1s;
+        }
+
+        .ember:nth-child(15) {
+            left: 80%;
+            width: 5px;
+            height: 5px;
+            animation-delay: 4.1s;
+            animation-duration: 5.9s;
+        }
 
         .hero-actions {
             display: flex;
@@ -1150,8 +1300,13 @@
             cursor: not-allowed;
         }
 
-        .carousel-prev { left: -24px; }
-        .carousel-next { right: -24px; }
+        .carousel-prev {
+            left: -24px;
+        }
+
+        .carousel-next {
+            right: -24px;
+        }
 
         .carousel-dots {
             display: flex;
@@ -1710,7 +1865,10 @@
             align-items: flex-start;
         }
 
-        .info-block:first-child { padding-top: 8px; }
+        .info-block:first-child {
+            padding-top: 8px;
+        }
+
         .info-block:last-child {
             border-bottom: none;
             padding-bottom: 8px;
@@ -1872,9 +2030,17 @@
         }
 
         @keyframes pulse-dot {
-            0% { box-shadow: 0 0 0 0 rgba(254, 81, 5, 0.7); }
-            70% { box-shadow: 0 0 0 8px rgba(254, 81, 5, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(254, 81, 5, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(254, 81, 5, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 8px rgba(254, 81, 5, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(254, 81, 5, 0);
+            }
         }
 
         .badge-urgencia {
@@ -1934,13 +2100,25 @@
 
         /* RESERVA POPUP MODAL */
         @keyframes reserva-fade-in {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes reserva-slide-up {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .reserva-overlay {
@@ -2453,8 +2631,13 @@
                 flex: 0 0 100%;
             }
 
-            .carousel-prev { left: 4px; }
-            .carousel-next { right: 4px; }
+            .carousel-prev {
+                left: 4px;
+            }
+
+            .carousel-next {
+                right: 4px;
+            }
 
             .carousel-arrow {
                 width: 42px;
@@ -2646,7 +2829,9 @@
                 <img src="https://churrascariameinhaus.com.br/wp-content/webp-express/webp-images/uploads/2023/04/churracaria-mein-haus-logo.png.webp"
                     alt="Mein Haus Churrascaria">
             </div>
-            <img class="hero-espeto" src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/espeto.png?raw=true" alt="Espeto Mein Haus" loading="eager">
+            <img class="hero-espeto"
+                src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/espeto.png?raw=true"
+                alt="Espeto Mein Haus" loading="eager">
 
             <!-- Brasas -->
             <div class="embers">
@@ -2674,19 +2859,36 @@
                     </div>
                     <h1>O melhor espeto corrido&nbsp;da <span>Grande Florianópolis.</span></h1>
 
-                    <p class="hero-lead">22 anos dominando a arte do churrasco gaúcho. Cortes nobres, espeto corrido completo e o sabor inconfundível da brasa em cada fatia.</p>
+                    <p class="hero-lead">24 anos dominando a arte do churrasco gaúcho. Cortes nobres, espeto corrido
+                        completo e o sabor inconfundível da brasa em cada fatia.</p>
 
                     <div class="hero-actions">
-                        <button type="button" onclick="openReservaPopup()" class="btn-dourado">GARANTIR MINHA RESERVA</button>
+                        <button type="button" onclick="openReservaPopup()" class="btn-dourado">GARANTIR MINHA
+                            RESERVA</button>
                     </div>
 
                     <div class="hero-reviews">
                         <span class="stars">
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
                         </span>
                         <strong>4.9</strong> · 750+ avaliações no Google
                     </div>
@@ -2700,7 +2902,8 @@
             <div class="container">
                 <div class="video-header reveal">
                     <h2>Sinta a experiência.</h2>
-                    <p class="subtitle">Um pouco do nosso ambiente, dos cortes na brasa e da paixão que coloca em cada detalhe.</p>
+                    <p class="subtitle">Um pouco do nosso ambiente, dos cortes na brasa e da paixão que coloca em cada
+                        detalhe.</p>
                 </div>
 
                 <div class="video-player reveal delay-1">
@@ -2711,19 +2914,38 @@
                 <div class="reviews">
                     <div class="review reveal delay-1">
                         <div class="review-stars">
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
                         </div>
-                        <p class="review-text">"O melhor espeto corrido da região. Carnes no ponto perfeito e buffet completíssimo. Ambiente muito familiar."</p>
+                        <p class="review-text">"O melhor espeto corrido da região. Carnes no ponto perfeito e buffet
+                            completíssimo. Ambiente muito familiar."</p>
                         <div class="review-author-row">
                             <div class="review-avatar">CE</div>
                             <div class="review-author-info">
                                 <span class="review-author">Carlos Eduardo</span>
                                 <div class="review-source">
-                                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                    </svg>
                                     Google · São José
                                 </div>
                             </div>
@@ -2731,19 +2953,38 @@
                     </div>
                     <div class="review reveal delay-2">
                         <div class="review-stars">
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
                         </div>
-                        <p class="review-text">"Tradição que não decepciona. A picanha derrete na boca e o atendimento é sempre de primeira qualidade."</p>
+                        <p class="review-text">"Tradição que não decepciona. A picanha derrete na boca e o atendimento é
+                            sempre de primeira qualidade."</p>
                         <div class="review-author-row">
                             <div class="review-avatar">MS</div>
                             <div class="review-author-info">
                                 <span class="review-author">Mariana Silva</span>
                                 <div class="review-source">
-                                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                    </svg>
                                     Google · Florianópolis
                                 </div>
                             </div>
@@ -2751,19 +2992,38 @@
                     </div>
                     <div class="review reveal delay-3">
                         <div class="review-stars">
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
                         </div>
-                        <p class="review-text">"Local perfeito para almoço de domingo em família. Estacionamento fácil e comida espetacular."</p>
+                        <p class="review-text">"Local perfeito para almoço de domingo em família. Estacionamento fácil e
+                            comida espetacular."</p>
                         <div class="review-author-row">
                             <div class="review-avatar">RA</div>
                             <div class="review-author-info">
                                 <span class="review-author">Roberto Alves</span>
                                 <div class="review-source">
-                                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                    </svg>
                                     Google · Palhoça
                                 </div>
                             </div>
@@ -2779,14 +3039,16 @@
                 <div class="autoridade-top reveal">
                     <div class="autoridade-title">
                         <span class="eyebrow" style="margin-bottom: 14px; display: block;">NOSSA HISTÓRIA</span>
-                        <h2>Referência em churrasco há <span>22 anos.</span></h2>
+                        <h2>Referência em churrasco há <span>24 anos.</span></h2>
                     </div>
                 </div>
 
                 <div class="historia-bloco reveal delay-1">
                     <div class="historia-img"></div>
                     <div class="historia-content">
-                        <p>Nossa história começou em São José com o propósito de oferecer o mais autêntico e suculento churrasco da região, unindo qualidade excepcional, ambiente acolhedor e o atendimento que só uma casa de tradição pode entregar.</p>
+                        <p>Nossa história começou em São José com o propósito de oferecer o mais autêntico e suculento
+                            churrasco da região, unindo qualidade excepcional, ambiente acolhedor e o atendimento que só
+                            uma casa de tradição pode entregar.</p>
                         <span class="assinatura">— Família Mein Haus</span>
                     </div>
                 </div>
@@ -2803,28 +3065,23 @@
                 <div class="diferenciais-grid">
                     <div class="dif-card reveal delay-1">
                         <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2023-03-15%20(1).webp?raw=true"
-                             alt="Cortes Premium Mein Haus"
-                             class="dif-img-real"
-                             loading="lazy">
+                            alt="Cortes Premium Mein Haus" class="dif-img-real" loading="lazy">
                         <h4>Cortes Premium</h4>
-                        <p>Picanha maturada, costela 12h, fraldinha e mais de 20 cortes nobres no espeto.</p>
+                        <p>Picanha maturada, costela 12h, fraldinha e mais de 15 cortes nobres no espeto.</p>
                     </div>
                     <div class="dif-card reveal delay-2">
                         <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2025-11-07.webp?raw=true"
-                             alt="Buffet Completo Mein Haus"
-                             class="dif-img-real"
-                             loading="lazy">
+                            alt="Buffet Completo Mein Haus" class="dif-img-real" loading="lazy">
                         <h4>Buffet Completo</h4>
                         <p>Mais de 40 itens entre saladas, antepastos, guarnições quentes e acompanhamentos premium.</p>
                     </div>
                     <div class="dif-card reveal delay-3">
                         <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/sal%C3%A3o%20principal.png?raw=true"
-                             alt="Ambiente Familiar Mein Haus"
-                             class="dif-img-real"
-                             style="object-position: center bottom;"
-                             loading="lazy">
+                            alt="Ambiente Familiar Mein Haus" class="dif-img-real"
+                            style="object-position: center bottom;" loading="lazy">
                         <h4>Ambiente Familiar</h4>
-                        <p>280 lugares, estacionamento próprio gratuito e espaço pensado para receber a família toda.</p>
+                        <p>462 lugares, estacionamento próprio gratuito e espaço pensado para receber a família toda.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -2846,12 +3103,14 @@
 
                 <div class="carousel-section reveal delay-1">
                     <div class="carousel-container">
-                        <button class="carousel-arrow carousel-prev" aria-label="Anterior" type="button">&#8592;</button>
+                        <button class="carousel-arrow carousel-prev" aria-label="Anterior"
+                            type="button">&#8592;</button>
                         <div class="carousel-viewport">
                             <div class="carousel-track">
                                 <div class="carousel-card">
                                     <div class="carousel-img">
-                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/image%20(49).png?raw=true" alt="Picanha maturada" loading="lazy">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/image%20(49).png?raw=true"
+                                            alt="Picanha maturada" loading="lazy">
                                     </div>
                                     <div class="carousel-content">
                                         <h4>Picanha maturada</h4>
@@ -2860,7 +3119,8 @@
                                 </div>
                                 <div class="carousel-card">
                                     <div class="carousel-img">
-                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2023-03-15%20(2).webp?raw=true" alt="Costela rústica 12h" loading="lazy">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2023-03-15%20(2).webp?raw=true"
+                                            alt="Costela rústica 12h" loading="lazy">
                                     </div>
                                     <div class="carousel-content">
                                         <h4>Costela rústica 12h</h4>
@@ -2869,7 +3129,8 @@
                                 </div>
                                 <div class="carousel-card">
                                     <div class="carousel-img">
-                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/Dia%20das%20M%C3%A3es%20Mein%20Haus.png?raw=true" alt="Fraldinha" loading="lazy">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/Dia%20das%20M%C3%A3es%20Mein%20Haus.png?raw=true"
+                                            alt="Fraldinha" loading="lazy">
                                     </div>
                                     <div class="carousel-content">
                                         <h4>Fraldinha</h4>
@@ -2878,7 +3139,8 @@
                                 </div>
                                 <div class="carousel-card">
                                     <div class="carousel-img">
-                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2025-11-07%20(1).webp?raw=true" alt="Maminha" loading="lazy">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2025-11-07%20(1).webp?raw=true"
+                                            alt="Maminha" loading="lazy">
                                     </div>
                                     <div class="carousel-content">
                                         <h4>Maminha</h4>
@@ -2887,7 +3149,8 @@
                                 </div>
                                 <div class="carousel-card">
                                     <div class="carousel-img">
-                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/SaveClip.App_540503772_1102235335386436_150855831183921799_n.jpg?raw=true" alt="Linguiça artesanal" loading="lazy">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/SaveClip.App_540503772_1102235335386436_150855831183921799_n.jpg?raw=true"
+                                            alt="Linguiça artesanal" loading="lazy">
                                     </div>
                                     <div class="carousel-content">
                                         <h4>Linguiça artesanal</h4>
@@ -2896,7 +3159,8 @@
                                 </div>
                                 <div class="carousel-card">
                                     <div class="carousel-img">
-                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/SaveClip.App_531797549_1091098159833487_8643719262671872899_n.jpg?raw=true" alt="Frango na brasa" loading="lazy">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/SaveClip.App_531797549_1091098159833487_8643719262671872899_n.jpg?raw=true"
+                                            alt="Frango na brasa" loading="lazy">
                                     </div>
                                     <div class="carousel-content">
                                         <h4>Frango na brasa</h4>
@@ -2905,7 +3169,8 @@
                                 </div>
                                 <div class="carousel-card">
                                     <div class="carousel-img">
-                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2023-03-15%20(5).webp?raw=true" alt="Saladas variadas" loading="lazy">
+                                        <img src="https://github.com/f5estrategia/MeinHausChurrascaria/blob/main/2023-03-15%20(5).webp?raw=true"
+                                            alt="Saladas variadas" loading="lazy">
                                     </div>
                                     <div class="carousel-content">
                                         <h4>Saladas variadas</h4>
@@ -2921,7 +3186,7 @@
 
                 <div class="precos-bloco reveal delay-1">
                     <h3>Valores por pessoa</h3>
-                    <div class="precos-subtitle">Almoço e jantar · Tudo incluso, sem surpresas</div>
+                    <div class="precos-subtitle">Almoço e jantar</div>
                     <div class="precos-grid">
                         <div class="preco-col">
                             <div class="dia">Segunda e Terça</div>
@@ -2935,12 +3200,17 @@
                         </div>
                         <div class="preco-col">
                             <div class="dia">Sábado e Domingo</div>
-                            <div class="valor">R$139,90 <span style="font-size: 14px; font-family: var(--font-jost); font-weight: 400; color: rgba(255,255,255,0.5);">almoço</span></div>
-                            <div class="valor" style="font-size: 26px; margin-top: 6px;">R$99,90 <span style="font-size: 13px; font-family: var(--font-jost); font-weight: 400; color: rgba(255,255,255,0.5);">jantar sáb</span></div>
+                            <div class="valor">R$139,90 <span
+                                    style="font-size: 14px; font-family: var(--font-jost); font-weight: 400; color: rgba(255,255,255,0.5);">almoço</span>
+                            </div>
+                            <div class="valor" style="font-size: 26px; margin-top: 6px;">R$99,90 <span
+                                    style="font-size: 13px; font-family: var(--font-jost); font-weight: 400; color: rgba(255,255,255,0.5);">jantar
+                                    sáb</span></div>
                             <div class="valor-crianca">Crianças R$69,50</div>
                         </div>
                     </div>
-                    <div class="precos-nota">* Valores promocionais sujeitos a alteração em feriados e datas especiais.</div>
+                    <div class="precos-nota">* Valores promocionais sujeitos a alteração em feriados e datas especiais.
+                    </div>
                     <button type="button" onclick="openReservaPopup()" class="btn-dourado">RESERVAR MINHA MESA</button>
                 </div>
             </div>
@@ -3019,7 +3289,8 @@
                         <a href="https://maps.google.com/?q=R.+Papa+João+XXIII,+25+-+Campinas,+São+José+-+SC"
                             target="_blank" rel="noopener" class="link-dourado">
                             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                                <path
+                                    d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
                             </svg>
                             Abrir rota no Google Maps
                         </a>
@@ -3027,16 +3298,23 @@
                     <div class="local-info reveal delay-1">
                         <div class="info-block">
                             <div class="info-icon">
-                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+                                </svg>
                             </div>
                             <div class="info-content">
                                 <div class="info-label">ENDEREÇO</div>
-                                <div class="info-valor">R. Papa João XXIII, 25 · Campinas · São José, SC · CEP 88101-310</div>
+                                <div class="info-valor">R. Papa João XXIII, 25 · Campinas · São José, SC · CEP 88101-340
+                                </div>
                             </div>
                         </div>
                         <div class="info-block">
                             <div class="info-icon">
-                                <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" />
+                                </svg>
                             </div>
                             <div class="info-content">
                                 <div class="info-label">SEG A SEX</div>
@@ -3046,7 +3324,10 @@
                         </div>
                         <div class="info-block">
                             <div class="info-icon">
-                                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" />
+                                </svg>
                             </div>
                             <div class="info-content">
                                 <div class="info-label">FIM DE SEMANA</div>
@@ -3057,11 +3338,17 @@
 
                         <div class="estrutura-chips">
                             <span class="chip chip-destaque">
-                                <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                                </svg>
                                 Estacionamento gratuito
                             </span>
                             <span class="chip chip-destaque">
-                                <svg viewBox="0 0 24 24"><path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22v-2z"/></svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22v-2z" />
+                                </svg>
                                 Ambiente climatizado
                             </span>
                         </div>
@@ -3078,7 +3365,8 @@
                     <h2>Garanta seu <em>lugar.</em></h2>
                     <p>Confirme sua reserva em menos de 5 minutos e prepare-se para uma experiência inesquecível.</p>
 
-                    <button type="button" onclick="openReservaPopup()" class="btn-dourado">GARANTIR MINHA RESERVA</button>
+                    <button type="button" onclick="openReservaPopup()" class="btn-dourado">GARANTIR MINHA
+                        RESERVA</button>
                 </div>
             </div>
         </section>
@@ -3088,11 +3376,19 @@
             <div class="container footer-minimal">
                 <div class="footer-copy">&copy; 2024 Mein Haus Churrascaria · Todos os direitos reservados.</div>
                 <div class="footer-social">
-                    <a href="https://www.instagram.com/churrascariameinhaus/" target="_blank" rel="noopener" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    <a href="https://www.instagram.com/churrascariameinhaus/" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
                     </a>
-                    <a href="https://www.facebook.com/churrascariameinhaus" target="_blank" rel="noopener" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"/></svg>
+                    <a href="https://www.facebook.com/churrascariameinhaus" target="_blank" rel="noopener"
+                        aria-label="Facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z" />
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -3101,10 +3397,12 @@
     </div>
 
     <!-- POPUP DE RESERVA -->
-    <div class="reserva-overlay" id="reservaOverlay" role="dialog" aria-modal="true" aria-labelledby="reservaTitulo" aria-hidden="true">
+    <div class="reserva-overlay" id="reservaOverlay" role="dialog" aria-modal="true" aria-labelledby="reservaTitulo"
+        aria-hidden="true">
         <div class="reserva-modal" role="document">
             <div class="reserva-header">
-                <button type="button" class="reserva-close" onclick="closeReservaPopup()" aria-label="Fechar">&times;</button>
+                <button type="button" class="reserva-close" onclick="closeReservaPopup()"
+                    aria-label="Fechar">&times;</button>
                 <div class="reserva-eyebrow">MEIN HAUS CHURRASCARIA</div>
                 <h3 class="reserva-titulo" id="reservaTitulo">Garantir reserva.</h3>
                 <p class="reserva-subtitulo">Preencha abaixo e entraremos em contato via WhatsApp.</p>
@@ -3113,23 +3411,31 @@
                 <form id="reservaForm" novalidate>
                     <div class="reserva-form-group">
                         <label class="reserva-label" for="reservaNome">SEU NOME</label>
-                        <input type="text" class="reserva-input" id="reservaNome" name="nome" placeholder="Como prefere ser chamado?" autocomplete="name" required>
-                        <div class="reserva-error" id="reservaNomeError">Informe um nome com no mínimo 3 caracteres.</div>
+                        <input type="text" class="reserva-input" id="reservaNome" name="nome"
+                            placeholder="Como prefere ser chamado?" autocomplete="name" required>
+                        <div class="reserva-error" id="reservaNomeError">Informe um nome com no mínimo 3 caracteres.
+                        </div>
                     </div>
                     <div class="reserva-form-group">
                         <label class="reserva-label" for="reservaWhats">WHATSAPP COM DDD</label>
-                        <input type="tel" class="reserva-input" id="reservaWhats" name="whatsapp" placeholder="(48) 99999-9999" inputmode="numeric" autocomplete="tel" required>
+                        <input type="tel" class="reserva-input" id="reservaWhats" name="whatsapp"
+                            placeholder="(48) 99999-9999" inputmode="numeric" autocomplete="tel" required>
                         <div class="reserva-error" id="reservaWhatsError">Informe um WhatsApp válido com DDD.</div>
                     </div>
                     <button type="submit" class="reserva-submit">GARANTIR MINHA RESERVA</button>
                     <div class="reserva-privacidade">
-                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+                        </svg>
                         Seus dados são usados apenas para confirmar sua reserva. Sem spam.
                     </div>
                 </form>
                 <div class="reserva-sucesso" id="reservaSucesso" style="display: none;">
                     <div class="reserva-sucesso-icon">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                        </svg>
                     </div>
                     <h4>Reserva confirmada!</h4>
                     <p>Redirecionando para o WhatsApp da Mein Haus...</p>
