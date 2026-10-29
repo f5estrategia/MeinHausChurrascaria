@@ -3683,6 +3683,118 @@
             update();
         }
     </script>
+<!-- f5 | padrao WhatsApp (29/10/2026): +55 fixo na frente do campo, o campo guarda so DDD + numero.
+     Tira o 55 do pais antes da mascara da LP: mais de 11 digitos (autofill/colar) ou "55" + digito
+     diferente de 9 (digitado a mao; celular de DDD 55 sempre segue com 9). Autofill desligado. -->
+<script id="f5-tel55">
+(function () {
+  if (window.__f5tel55) return;
+  window.__f5tel55 = true;
+
+  var SEL = 'input[type="tel"],input[name*="whats" i],input[id*="whats" i],input[name*="telefone" i],input[id*="telefone" i],input[name*="celular" i],input[name*="phone" i]';
+  var NAO = /^(hidden|checkbox|radio|submit|button|email)$/i;
+
+  function ehTel(el) {
+    return el && el.tagName === 'INPUT' && !NAO.test(el.type) && el.matches(SEL);
+  }
+
+  function semPais(d) {
+    return d.slice(0, 2) === '55' && (d.length > 11 || (d.length >= 3 && d.charAt(2) !== '9')) ? d.slice(2) : d;
+  }
+
+  function limpar(el) {
+    var d = el.value.replace(/\D/g, '');
+    var n = semPais(d);
+    if (n !== d) el.value = n;
+    return n !== d;
+  }
+
+  /* captura: roda antes da mascara da propria LP */
+  document.addEventListener('input', function (e) { if (ehTel(e.target)) limpar(e.target); }, true);
+  /* autofill que so dispara change: limpa e repassa pela mascara da LP */
+  document.addEventListener('change', function (e) {
+    if (ehTel(e.target) && limpar(e.target)) e.target.dispatchEvent(new Event('input', { bubbles: true }));
+  }, true);
+
+  var regua = document.createElement('canvas').getContext('2d');
+
+  function medir(el, span) {
+    var cs = getComputedStyle(el);
+    regua.font = cs.fontStyle + ' ' + cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+    var base = parseFloat(el.getAttribute('data-f5-pad')) || 0;
+    var borda = parseFloat(cs.borderLeftWidth) || 0;
+    var tam = parseFloat(cs.fontSize) || 16;
+    span.style.left = (base + borda) + 'px';
+    el.style.setProperty('padding-left', (base + Math.ceil(regua.measureText('+55').width) + Math.round(tam * 0.45)) + 'px', 'important');
+  }
+
+  function prefixar(el) {
+    if (!ehTel(el) || el.hasAttribute('data-f5-pad')) return;
+    var cs = getComputedStyle(el);
+    var pai = el.parentNode ? getComputedStyle(el.parentNode).display : '';
+    el.setAttribute('data-f5-pad', parseFloat(cs.paddingLeft) || 0);
+    el.setAttribute('autocomplete', 'nao-preencher');
+    el.removeAttribute('maxlength');
+    if (el.form) el.form.setAttribute('autocomplete', 'off');
+    var ph = el.getAttribute('placeholder');
+    if (ph && /^\s*\+?\s*55\s/.test(ph)) el.setAttribute('placeholder', ph.replace(/^\s*\+?\s*55\s*/, ''));
+    /* campo que ja tem +55/bandeira proprio: so a limpeza, sem prefixo duplicado */
+    if (el.closest('.iti, .rf-tel') || /\+\s?55/.test(el.parentNode.textContent || '')) return;
+
+    var caixa = document.createElement('span');
+    caixa.className = 'f5-tel55';
+    var s = caixa.style;
+    s.position = 'relative';
+    s.display = 'block';
+    s.lineHeight = '0';
+    ['marginTop', 'marginRight', 'marginBottom', 'marginLeft'].forEach(function (m) { s[m] = cs[m]; el.style[m] = '0'; });
+    if (/flex|grid/.test(pai)) {
+      ['flexGrow', 'flexShrink', 'flexBasis', 'order', 'alignSelf', 'justifySelf', 'gridColumn', 'gridRow'].forEach(function (p) { s[p] = cs[p]; });
+      s.minWidth = '0';
+      el.style.width = '100%';
+    }
+    if (/inline/.test(cs.display)) el.style.verticalAlign = 'top';
+
+    var ddi = document.createElement('span');
+    ddi.textContent = '+55';
+    ddi.setAttribute('aria-hidden', 'true');
+    var d = ddi.style;
+    d.position = 'absolute';
+    d.top = '50%';
+    d.transform = 'translateY(-50%)';
+    d.zIndex = '2';
+    d.pointerEvents = 'none';
+    d.whiteSpace = 'nowrap';
+    d.lineHeight = 'normal';
+    d.font = cs.fontStyle + ' ' + cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+    d.letterSpacing = cs.letterSpacing;
+    d.color = cs.color;
+
+    el.parentNode.insertBefore(caixa, el);
+    caixa.appendChild(ddi);
+    caixa.appendChild(el);
+    medir(el, ddi);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { medir(el, ddi); });
+    if (el.value) limpar(el);
+  }
+
+  function varrer(raiz) {
+    if (!raiz.querySelectorAll) return;
+    if (ehTel(raiz)) prefixar(raiz);
+    Array.prototype.forEach.call(raiz.querySelectorAll(SEL), prefixar);
+  }
+
+  function iniciar() {
+    varrer(document);
+    new MutationObserver(function (lista) {
+      lista.forEach(function (m) { Array.prototype.forEach.call(m.addedNodes, varrer); });
+    }).observe(document.documentElement, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar);
+  else iniciar();
+})();
+</script>
 </body>
 
 </html>
